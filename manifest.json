@@ -1,0 +1,13 @@
+{
+  "display_name": "Catta Lorebook",
+  "loading_order": 120,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "Catta Team",
+  "version": "0.3.1",
+  "minimum_client_version": "1.19.0",
+  "description": "Catta Lorebook catalog and management for SillyTavern.",
+  "generate_interceptor": "cattaLorebookPrepare"
+}
