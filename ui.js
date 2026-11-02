@@ -8,7 +8,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
       <details class="clb-shell" open>
         <summary class="clb-header"><span class="clb-brand"><img class="clb-brand-icon" src="${asset('icon_magic_book')}" width="34" height="38" alt="" aria-hidden="true"><span>Catta Lorebook<small>CATTA CAFÉ EXTENSION</small></span></span><span class="clb-chevron">⌄</span></summary>
         <div class="clb-body">
-          <section class="clb-hero"><div><small>✦ CATTA CLOUD LIBRARY</small><h2>เรื่องราวของคุณ<br><span>อยู่ใกล้แค่เอื้อม</span></h2><p>จัดเก็บ ค้นหา และเลือกใช้ Lorebook<br>บน SillyTavern ได้ในที่เดียว</p></div><img src="${asset('mascot_reading')}" alt="" aria-hidden="true"></section>
+          <section class="clb-hero clb-premium-hero"><img class="clb-premium-scene" src="${asset('premium_hero')}" alt="" aria-hidden="true"><div class="clb-hero-copy"><small>✦ CATTA CLOUD LIBRARY</small><h2>เรื่องราวของคุณ<br><span>อยู่ใกล้แค่เอื้อม</span></h2><p>จัดเก็บ ค้นหา และเลือกใช้ Lorebook<br>บน SillyTavern ได้ในที่เดียว</p></div></section>
           <section class="clb-account"><div class="clb-account-line"><img src="${asset('mascot_happy')}" alt=""><div><small>บัญชี Catta</small><p data-clb="account">ยังไม่ได้เชื่อมบัญชี Catta</p><span data-clb="quota" class="clb-note"></span></div></div>
             <details data-clb="login-box"><summary>เชื่อมบัญชี / เปลี่ยนบัญชี Catta</summary>
               <label class="clb-field">Discord User ID<input data-clb="uid" inputmode="numeric" autocomplete="off"></label>
@@ -26,7 +26,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
             <section class="clb-section clb-selected-section"><img class="clb-bookmark" src="${asset('bookmark_paw')}" width="20" height="38" alt="" aria-hidden="true"><h3>✦ Lorebook ที่เลือก</h3><div data-clb="selected"></div>
               <div data-clb="active" class="clb-active" hidden><label class="clb-enable"><span>เชื่อมกับแชทนี้</span><input data-clb="enabled" type="checkbox" role="switch"><span class="clb-track" aria-hidden="true"></span></label><p data-clb="loaded" class="clb-note"></p></div>
             </section>
-            <button type="button" data-clb="start" class="clb-primary clb-start" aria-haspopup="dialog" aria-controls="clb-setup" disabled>⚙ เริ่มใช้งาน <span>✦</span></button>
+            <button type="button" data-clb="start" data-state="idle" class="clb-primary clb-start" aria-haspopup="dialog" aria-controls="clb-setup" disabled><span data-clb="start-label" class="clb-start-label">⚙ เริ่มใช้งาน</span><span data-clb="start-cat" class="clb-start-cat" aria-hidden="true">✦</span></button>
             <p data-clb="start-hint" class="clb-caption">เลือก Lorebook แล้วเปิดเชื่อมกับแชทนี้</p>
             <section class="clb-section clb-library"><h3 class="clb-section-heading"><img src="${asset('icon_folder')}" width="30" height="30" alt="" aria-hidden="true">คลังของฉัน</h3><div data-clb="mine-list" class="clb-list"></div></section>
           </div>
@@ -54,7 +54,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
           <p data-clb="status" class="clb-status" role="status" aria-live="polite"></p>
           <footer class="clb-footer"><div class="clb-footer-art" aria-hidden="true"><img class="clb-cuddle" src="${asset('mascot_cuddling_cat')}" width="76" height="78" alt=""><img class="clb-paw-stars" src="${asset('paw_stars_decor')}" width="72" height="36" alt=""></div>CATTA <span>✦</span> LOREBOOK<small>สิทธิ์เนื้อหา · เนื้อหาและงานเขียน Prompt ใน Lorebook เป็นผลงานและทรัพย์สินทางปัญญาของผู้สร้างแต่ละราย โปรดใช้งานตามสิทธิ์ที่ผู้สร้างกำหนด ห้ามคัดลอก ดัดแปลง เผยแพร่ หรือนำเนื้อหาไปใช้ต่อนอกสิทธิ์ที่ได้รับ</small></footer>
           <dialog data-clb="setup" id="clb-setup" class="clb-dialog" aria-labelledby="clb-setup-title"><form data-clb="setup-form">
-            <div class="clb-dialog-header"><span>⚙</span><h3 id="clb-setup-title">ตั้งค่าก่อนเริ่มใช้งาน</h3><button type="button" data-clb="close-setup" class="clb-close" aria-label="ปิดการตั้งค่า">×</button></div>
+            <div class="clb-dialog-header"><span><img class="clb-setup-mascot" src="${asset('mascot_reading')}" width="34" height="38" alt="" aria-hidden="true"></span><h3 id="clb-setup-title">ตั้งค่าก่อนเริ่มใช้งาน</h3><button type="button" data-clb="close-setup" class="clb-close" aria-label="ปิดการตั้งค่า">×</button></div>
             <p class="clb-note">ตั้งค่าการจับข้อความและงบโทเคนสำหรับ Lorebook ที่เลือก</p>
             <div class="clb-options"><label class="clb-field">สแกนข้อความล่าสุด<input data-clb="scan" type="number" min="1" max="100" required step="1"></label><label class="clb-field">งบโทเคน<input data-clb="budget" type="number" min="64" max="${limits.tokenBudget}" required step="1"></label></div>
             <p class="clb-note">นับข้อความแชทล่าสุดเพื่อจับ Keywords · งบโทเคนกำหนดปริมาณ Lorebook ที่ส่งให้ AI</p>
@@ -94,6 +94,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
     let pendingUnlock = null, pendingPolicy = null, uploadRequestKey = null;
     const bindings = new Map();
     const connections = new Map();
+    const configuredBooks = new Map();
     const grants = new Map();
     let currentKey = key();
     const selected = () => bindings.get(key());
@@ -182,7 +183,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         el('unlock-pin').focus();
     }
     function revokeMemory() {
-        selectionEpoch++; bindings.clear(); connections.clear(); grants.clear(); runtime.clearAll();
+        selectionEpoch++; bindings.clear(); connections.clear(); configuredBooks.clear(); grants.clear(); runtime.clearAll();
     }
     async function choose(item, unlockedToken) {
         const originalKey = key(), epoch = ++selectionEpoch, identityEpoch = accountEpoch;
@@ -196,6 +197,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
             runtime.importBook(data.book);
             bindings.set(originalKey, data.metadata);
             connections.set(originalKey, false);
+            configuredBooks.delete(originalKey);
             runtime.setEnabled(false);
             switchTab('mine');
             update(runtime.snapshot());
@@ -234,7 +236,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
                     const identityEpoch = accountEpoch;
                     menu.open = false;
                     if (action === 'policy') { openPolicy(item); return; }
-                    if (action === 'unlink') { selectionEpoch++; bindings.delete(key()); connections.delete(key()); runtime.clear(); update(runtime.snapshot()); return; }
+                    if (action === 'unlink') { selectionEpoch++; bindings.delete(key()); connections.delete(key()); configuredBooks.delete(key()); runtime.clear(); update(runtime.snapshot()); return; }
                     if (action === 'archive' && !confirm('เก็บ Lorebook นี้เข้าคลังเพื่อคืนสล็อต? ข้อมูลยังเก็บไว้ แต่จะเลือกใช้ไม่ได้')) return;
                     if (action === 'delete' && !confirm('ลบ Lorebook ของคุณถาวร? การลบไม่สามารถกู้คืนได้')) return;
                     button.disabled = true;
@@ -247,6 +249,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
                             runtime.clearAll();
                             bindings.clear();
                             connections.clear();
+                            configuredBooks.clear();
                             grants.clear();
                         }
                         const data = await cloud.me();
@@ -304,8 +307,13 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         el('active').hidden = !book;
         el('enabled').checked = snapshot.enabled && !!book;
         el('loaded').textContent = book ? `${snapshot.count} Entries · ${snapshot.enabled ? 'เชื่อมกับแชทนี้แล้ว' : 'ยังไม่เชื่อมกับแชทนี้'}` : '';
+        const started = !!book && snapshot.enabled && configuredBooks.get(nextKey) === book.id;
         el('start').disabled = !book || !snapshot.enabled;
-        el('start-hint').textContent = book && snapshot.enabled ? 'กดเริ่มใช้งานเพื่อตั้งค่าการสแกนและงบโทเคน' : 'เลือก Lorebook แล้วเปิดเชื่อมกับแชทนี้';
+        el('start').dataset.state = started ? 'active' : 'idle';
+        el('start-label').textContent = started ? 'กำลังใช้งาน' : '⚙ เริ่มใช้งาน';
+        el('start-cat').textContent = started ? '(=^･ω･^=)' : '✦';
+        el('start').title = started ? 'กำลังใช้งานกับแชทนี้ · กดเพื่อปรับการตั้งค่า' : 'ตั้งค่าการสแกนและงบโทเคน';
+        el('start-hint').textContent = started ? 'พร้อมใช้กับแชทนี้ · กดปุ่มเพื่อปรับการตั้งค่า' : book && snapshot.enabled ? 'กดเริ่มใช้งานเพื่อตั้งค่าการสแกนและงบโทเคน' : 'เลือก Lorebook แล้วเปิดเชื่อมกับแชทนี้';
         if (el('setup').open && (setupKey !== key() || !book || !snapshot.enabled)) el('setup').close();
         if (el('unlock-dialog').open && pendingUnlock?.key !== key()) el('unlock-dialog').close();
         const states = { prepared: `เตรียม ${snapshot.selected} Entries`, sent: `ใส่ ${snapshot.sent} Entries · ข้าม ${snapshot.omitted} Entries`, error: 'หยุดส่งเนื่องจากข้อผิดพลาด' };
@@ -370,7 +378,8 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         try {
             if (setupKey !== key() || !selected() || !runtime.snapshot().enabled) throw error('CONTEXT_CHANGED');
             runtime.setOptions({ scanDepth: Number(el('scan').value), tokenBudget: Number(el('budget').value) });
-            el('setup').close(); setStatus('บันทึกแล้ว · พร้อมใช้งานกับแชทนี้');
+            configuredBooks.set(setupKey, selected().id);
+            el('setup').close(); update(runtime.snapshot()); setStatus('บันทึกแล้ว · พร้อมใช้งานกับแชทนี้');
         } catch (err) { el('setup-status').textContent = 'บันทึกไม่สำเร็จ ตรวจค่าหรือเลือกแชทใหม่'; showError(err); }
     });
     for (const name of ['close-unlock','cancel-unlock']) el(name).addEventListener('click', () => el('unlock-dialog').close());
@@ -447,7 +456,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         },
         clear() {
             accountEpoch++; searchEpoch++; selectionEpoch++; clearTimeout(searchTimer);
-            bindings.clear(); connections.clear(); grants.clear(); items = []; account = null; quota = null; capabilities = null; hasMore = false; loading = false;
+            bindings.clear(); connections.clear(); configuredBooks.clear(); grants.clear(); items = []; account = null; quota = null; capabilities = null; hasMore = false; loading = false;
             syncUploadPermission();
             for (const name of ['setup','unlock-dialog','policy-dialog']) if (el(name).open) el(name).close();
             pendingUnlock = null; pendingPolicy = null; uploadRequestKey = null;

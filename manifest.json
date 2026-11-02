@@ -6,8 +6,8 @@
   "js": "index.js",
   "css": "style.css",
   "author": "Catta Team",
-  "version": "0.4.4",
+  "version": "0.4.8",
   "minimum_client_version": "1.19.0",
-  "description": "Catta Lorebook Blue & Gold Night with session-only account checks, tier sharing and six-digit access codes.",
+  "description": "Catta Lorebook Midnight Premium with clear WebP artwork, per-chat activity status, tier sharing and six-digit access codes.",
   "generate_interceptor": "cattaLorebookPrepare"
 }
