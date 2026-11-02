@@ -52,7 +52,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
           </section></div>
           <button type="button" data-clb="more" class="clb-secondary" hidden>โหลดรายการเพิ่ม</button>
           <p data-clb="status" class="clb-status" role="status" aria-live="polite"></p>
-          <footer class="clb-footer">CATTA <span>✦</span> LOREBOOK<small>Cloud เก็บไฟล์ในบัญชี · รีโหลดแล้วเลือกใช้ใหม่</small></footer>
+          <footer class="clb-footer">CATTA <span>✦</span> LOREBOOK<small>สิทธิ์เนื้อหา · เนื้อหาและงานเขียน Prompt ใน Lorebook เป็นผลงานและทรัพย์สินทางปัญญาของผู้สร้างแต่ละราย โปรดใช้งานตามสิทธิ์ที่ผู้สร้างกำหนด ห้ามคัดลอก ดัดแปลง เผยแพร่ หรือนำเนื้อหาไปใช้ต่อนอกสิทธิ์ที่ได้รับ</small></footer>
           <dialog data-clb="setup" id="clb-setup" class="clb-dialog" aria-labelledby="clb-setup-title"><form data-clb="setup-form">
             <div class="clb-dialog-header"><span>⚙</span><h3 id="clb-setup-title">ตั้งค่าก่อนเริ่มใช้งาน</h3><button type="button" data-clb="close-setup" class="clb-close" aria-label="ปิดการตั้งค่า">×</button></div>
             <p class="clb-note">ตั้งค่าการจับข้อความและงบโทเคนสำหรับ Lorebook ที่เลือก</p>
