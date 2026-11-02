@@ -1,5 +1,113 @@
-#catta-lorebook{--clb-orange:#ffa447;--clb-muted:#baa99a;color:#eee4dc;background:#191716;margin:10px 0;padding:0;font-size:13px;border:1px solid #382c24;border-radius:7px;overflow:hidden;text-shadow:none}#catta-lorebook *{box-sizing:border-box}#catta-lorebook [hidden]{display:none!important}#catta-lorebook button,#catta-lorebook input{font:inherit;text-shadow:none}#catta-lorebook button{cursor:pointer;color:inherit;margin:0;box-shadow:none;width:auto;min-width:0;max-width:100%}#catta-lorebook button:disabled{cursor:default;opacity:.6}#catta-lorebook button:focus-visible,#catta-lorebook input:focus-visible,#catta-lorebook summary:focus-visible{outline:2px solid var(--clb-orange);outline-offset:2px}#catta-lorebook summary{cursor:pointer}#catta-lorebook .clb-header{display:flex;align-items:center;justify-content:space-between;min-height:43px;padding:10px 12px;border-left:4px solid var(--clb-orange);background:#2a2119;list-style:none}#catta-lorebook .clb-header::-webkit-details-marker{display:none}#catta-lorebook .clb-brand{display:flex;gap:9px;align-items:center;font-weight:700;font-size:15px}#catta-lorebook .clb-brand>span{color:var(--clb-orange);font-size:20px}#catta-lorebook .clb-chevron{border-radius:50%;width:23px;height:23px;display:grid;place-items:center;background:#554334;color:#ffbd7d;font:700 20px/1 system-ui}#catta-lorebook .clb-shell:not([open]) .clb-chevron{transform:rotate(180deg)}#catta-lorebook .clb-body{padding:0 11px 10px}#catta-lorebook .clb-tabs{display:flex;gap:5px;border-bottom:1px solid #443022;margin-bottom:12px}#catta-lorebook .clb-tabs button{flex:1;padding:10px 4px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--clb-muted);border-radius:0;white-space:nowrap}#catta-lorebook .clb-tabs button[aria-selected=true]{color:#ffc28a;border-bottom-color:var(--clb-orange);font-weight:700}#catta-lorebook .clb-search-wrap{display:flex;align-items:center;gap:8px;border:1px solid #634225;background:#141211;padding:0 10px;border-radius:9px;margin-bottom:10px;color:var(--clb-orange)}#catta-lorebook .clb-search-wrap input{width:100%;min-width:0;border:0;background:transparent;color:#f5e7da;padding:10px 0;margin:0;box-shadow:none}#catta-lorebook input::placeholder{color:#ae9b8a;opacity:1}#catta-lorebook .clb-empty{border:1px dashed #644327;border-radius:9px;padding:16px 12px;color:var(--clb-muted);text-align:center;margin:0 0 12px;line-height:1.6}#catta-lorebook .clb-tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:21px 0}#catta-lorebook .clb-tiles button{display:flex;align-items:center;flex-direction:column;justify-content:center;gap:6px;min-height:92px;width:100%;background:#24201d;border:1px solid #503723;border-radius:11px;padding:12px 6px}#catta-lorebook .clb-tiles button:hover,#catta-lorebook .clb-select:hover{background:#38291e;border-color:var(--clb-orange)}#catta-lorebook .clb-tile-icon{color:var(--clb-orange);font:24px/1 system-ui}#catta-lorebook .clb-tiles strong{color:#ffd0a2}#catta-lorebook .clb-tiles small{font-size:10px;color:var(--clb-muted);line-height:1.5}#catta-lorebook .clb-card{border:1px solid #4d3727;background:#24201c;border-radius:9px;padding:12px;margin-bottom:10px;display:flex;flex-direction:column;gap:6px;overflow-wrap:anywhere}#catta-lorebook .clb-card-title{color:#ffe0c0;font-size:14px}#catta-lorebook .clb-card-meta{color:#d0bdab;font-size:12px}#catta-lorebook .clb-card-id{color:#aa9684;font:10px/1.5 monospace}#catta-lorebook .clb-card-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:4px}#catta-lorebook .clb-badge{color:#e9a867;font-size:10px}#catta-lorebook .clb-select{background:#49301c;border:1px solid #9b632f;color:#ffdbb6;border-radius:6px;padding:5px 12px}#catta-lorebook .clb-active{border-top:1px solid #443022;padding-top:12px}#catta-lorebook .clb-enable{display:flex;align-items:center;gap:8px}#catta-lorebook input[type=checkbox]{accent-color:var(--clb-orange);margin:0;width:16px;height:16px}#catta-lorebook .clb-protected{color:var(--clb-muted);font-size:11px;margin:6px 0}#catta-lorebook .clb-text-button{background:transparent;color:#c7ad97;border:0;text-decoration:underline;padding:3px 0;font-size:11px}#catta-lorebook .clb-status{margin:8px 0;color:#ffc48c;line-height:1.6;overflow-wrap:anywhere}#catta-lorebook .clb-status:empty{display:none}#catta-lorebook .clb-footer{border-top:1px solid #443022;padding-top:11px;margin-top:16px;text-align:center}#catta-lorebook .clb-primary{width:100%;border:1px solid #a56a33;background:#422c1c;color:#ffdbb8;padding:10px;border-radius:8px;font-weight:600}#catta-lorebook .clb-primary:hover{background:#5a3820}#catta-lorebook .clb-footer small{display:block;font-size:10px;color:#bda28b;padding:7px 0}#catta-lorebook .clb-field{display:block;color:#d9c4b1;margin-bottom:12px}#catta-lorebook .clb-field input,#catta-lorebook .clb-options input{display:block;width:100%;margin:5px 0 0;padding:9px;border:1px solid #62452f;border-radius:6px;color:#f4e8de;background:#151210}#catta-lorebook .clb-note{font-size:12px;color:var(--clb-muted);line-height:1.7;margin:10px 0}#catta-lorebook .clb-advanced{border-top:1px solid #332920;padding:9px 0 0;margin-top:6px}#catta-lorebook .clb-advanced>summary{color:#c9ad96;font-size:11px}#catta-lorebook .clb-options{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}#catta-lorebook .clb-secondary{background:#29211c;border:1px solid #715036;border-radius:6px;padding:8px}@media(prefers-reduced-motion:no-preference){#catta-lorebook button{transition:background .15s ease,border-color .15s ease}}@media(max-width:350px){#catta-lorebook .clb-options{grid-template-columns:1fr}#catta-lorebook .clb-tiles{gap:6px}}
-/* Hide Cloud functions until server confirms Catta membership. Login stays visible. */
-#catta-lorebook:not([data-clb-member-gate="authorized"]) .clb-tabs, #catta-lorebook:not([data-clb-member-gate="authorized"]) .clb-search-wrap, #catta-lorebook:not([data-clb-member-gate="authorized"]) [data-pane], #catta-lorebook:not([data-clb-member-gate="authorized"]) [data-clb="more"], #catta-lorebook:not([data-clb-member-gate="authorized"]) [data-clb="active"], #catta-lorebook:not([data-clb-member-gate="authorized"]) .clb-footer, #catta-lorebook:not([data-clb-member-gate="authorized"]) .clb-advanced {display:none!important;}
-#catta-lorebook .clb-member-gate{border:1px solid #9a5b32;border-radius:6px;margin:10px;padding:10px;color:#f3c48a;background:#34251e;}
-
+/* Scoped to this extension: never restyle SillyTavern or the other Catta panels. */
+#catta-lorebook{--clb-ink:#244d70;--clb-muted:#688198;--clb-line:#bcd6e9;--clb-sky:#e8f5ff;--clb-gold:#ffd575;color:var(--clb-ink);background:transparent;border:0;margin:10px 0;padding:0;font:13px/1.6 "Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif;text-shadow:none;isolation:isolate;min-width:0}
+#catta-lorebook *{box-sizing:border-box;text-shadow:none}
+#catta-lorebook [hidden]{display:none!important}
+#catta-lorebook :is(button,input){font:inherit;color:inherit}
+#catta-lorebook button{cursor:pointer;margin:0;min-width:0;max-width:100%;box-shadow:none;text-shadow:none;width:auto}
+#catta-lorebook button:disabled{cursor:not-allowed;opacity:.58}
+#catta-lorebook :is(button,input,summary):focus-visible{outline:3px solid #c2912a;outline-offset:3px}
+#catta-lorebook summary{cursor:pointer;list-style:none}
+#catta-lorebook summary::-webkit-details-marker{display:none}
+#catta-lorebook .clb-header{display:flex;align-items:center;justify-content:space-between;min-height:55px;padding:9px 14px;background:linear-gradient(110deg,#1c3656,#2c5679);border:1px solid #547ba5;border-left:5px solid #ffdb75;border-radius:12px;color:#fff;box-shadow:0 5px 20px #07111d30}
+#catta-lorebook .clb-brand{display:flex;gap:10px;align-items:center;font-size:21px;color:#ffe2a0}
+#catta-lorebook .clb-brand>span{font-size:17px;line-height:1.35;font-weight:800;color:#fff}
+#catta-lorebook .clb-brand small{display:block;font-size:8px;letter-spacing:1.4px;color:#c4e3f9}
+#catta-lorebook .clb-chevron{display:grid;place-items:center;border-radius:50%;width:28px;height:28px;background:#ffffff1a;border:1px solid #ffffff3d}
+#catta-lorebook .clb-shell:not([open]) .clb-chevron{transform:rotate(-90deg)}
+#catta-lorebook .clb-body{padding:12px 5px 8px}
+#catta-lorebook .clb-hero{height:150px;border:1px solid #9fc9ed;border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(122deg,#f7fbff,#e2f2ff 48%,#c5e7ff);box-shadow:0 5px 20px #07111d1a}
+#catta-lorebook .clb-hero>div{position:relative;z-index:2;padding:16px}
+#catta-lorebook .clb-hero small{font-size:9px;letter-spacing:1.1px;color:#3878a5;font-weight:800}
+#catta-lorebook .clb-hero h2{font-size:24px;line-height:1.35;margin:5px 0;color:#174775;font-weight:900}
+#catta-lorebook .clb-hero h2 span{color:#bf8015}
+#catta-lorebook .clb-hero p{font-size:10px;line-height:1.5;margin:0;color:#526f8b}
+#catta-lorebook .clb-hero>img{position:absolute;width:165px;height:auto;right:0;bottom:-28px;pointer-events:none}
+#catta-lorebook .clb-account{margin:10px 0 12px;background:linear-gradient(115deg,#fffdf8,#f2f9ff);border:1px solid #d8e7f2;border-radius:12px;padding:11px;box-shadow:0 5px 20px #07111d1a}
+#catta-lorebook .clb-account-line{display:flex;gap:10px;align-items:center;min-width:0}
+#catta-lorebook .clb-account-line>img{width:47px;height:47px;object-fit:contain;border-radius:50%;background:#fff3ce;border:2px solid #ffd879}
+#catta-lorebook .clb-account-line>div{flex:1;min-width:0;overflow-wrap:anywhere}
+#catta-lorebook .clb-account-line small{font-size:10px;color:#6b8097}
+#catta-lorebook [data-clb=account]{margin:0;font-size:13px;font-weight:800}
+#catta-lorebook [data-clb=quota]{font-size:10px}
+#catta-lorebook [data-clb=login-box]{font-size:11px;margin-top:8px;color:#487595}
+#catta-lorebook .clb-tabs{display:flex;gap:5px;background:#f1f8ffed;border:1px solid var(--clb-line);padding:5px;border-radius:12px;margin-bottom:12px}
+#catta-lorebook .clb-tabs button{flex:1;min-height:42px;padding:7px 3px;border:1px solid transparent;border-radius:9px;background:transparent;color:#2b658e;font-size:12px;font-weight:800;white-space:nowrap}
+#catta-lorebook .clb-tabs button[aria-selected=true]{background:linear-gradient(#ffe8ae,#ffd16b);border-color:#ecbc4e;color:#254667;box-shadow:inset 0 1px #fffbeb,0 2px 4px #92642426}
+#catta-lorebook .clb-tabs button:hover{filter:brightness(.98)}
+#catta-lorebook .clb-section{background:linear-gradient(#f7fbfff5,#f9fbfff5);border:1px solid #abcfe8;border-radius:12px;padding:11px;box-shadow:0 5px 20px #07111d1a}
+#catta-lorebook h3{margin:0 0 10px;font-size:14px;font-weight:800;color:#244e74}
+#catta-lorebook .clb-library{margin-top:15px}
+#catta-lorebook .clb-list{display:flex;flex-direction:column;gap:9px}
+#catta-lorebook .clb-card{display:flex;flex-direction:column;gap:4px;position:relative;padding:12px;background:linear-gradient(145deg,#fffdf8,#fff9ec);border:1px solid #e9d7b6;border-radius:12px;min-width:0;overflow-wrap:anywhere;box-shadow:0 2px 8px #68583714}
+#catta-lorebook .clb-card-title{display:block;font-size:16px;color:#1a3e63;padding-right:36px}
+#catta-lorebook .clb-card-meta{color:#65798d;font-size:11px}
+#catta-lorebook .clb-card-id{font-size:9px;color:#778596;overflow-wrap:anywhere}
+#catta-lorebook .clb-badge{display:inline-block;align-self:flex-start;color:#7d6129;background:#fff0c6;border:1px solid #f4d891;padding:2px 7px;border-radius:6px;font-size:10px;margin-top:3px}
+#catta-lorebook .clb-select{align-self:flex-end;padding:6px 14px;border-radius:7px;border:1px solid #efcb83;background:#ffebba;color:#70522f;font-size:11px;font-weight:800}
+#catta-lorebook .clb-empty{padding:23px 12px;text-align:center;background:linear-gradient(#fffdf7,#fff8e9);border:1px dashed #e5c783;border-radius:10px;color:#68788d;margin:0;font-size:12px}
+#catta-lorebook .clb-active{padding:11px 0 0}
+#catta-lorebook .clb-enable{display:flex;align-items:center;justify-content:space-between;position:relative;gap:8px;cursor:pointer;font-size:12px;font-weight:800}
+#catta-lorebook .clb-enable input{position:absolute;opacity:0;width:1px;height:1px;right:10px}
+#catta-lorebook .clb-track{width:40px;height:24px;padding:3px;border-radius:30px;background:#d6e0e7;border:1px solid #c0d0d7;display:block;flex:none}
+#catta-lorebook .clb-track:before{content:"";width:16px;height:16px;display:block;border-radius:50%;background:#fff;box-shadow:0 2px 3px #172c3b35}
+#catta-lorebook .clb-enable input:checked+.clb-track{background:#ffd16c;border-color:#edb94e}
+#catta-lorebook .clb-enable input:checked+.clb-track:before{transform:translateX(16px)}
+#catta-lorebook .clb-enable input:focus-visible+.clb-track{outline:3px solid #c2912a;outline-offset:3px}
+#catta-lorebook .clb-primary{display:block;width:100%;border:1px solid #e0b151;border-radius:10px;background:linear-gradient(#ffeaaa,#ffd16b);color:#254e70;min-height:42px;padding:9px 12px;font-size:12px;font-weight:800}
+#catta-lorebook .clb-primary:hover:not(:disabled){filter:brightness(1.04)}
+#catta-lorebook .clb-start{font-size:15px;min-height:48px;margin-top:12px;box-shadow:0 3px 0 #d1a64c,0 8px 20px #4b381a20}
+#catta-lorebook .clb-start>span{color:#c99725;margin-left:8px}
+#catta-lorebook .clb-caption{font-size:10px;text-align:center;margin:10px 2px;color:#b5cde0}
+#catta-lorebook .clb-note{font-size:11px;color:var(--clb-muted);line-height:1.7;margin:7px 0}
+#catta-lorebook .clb-book-menu{position:absolute;top:9px;right:9px;z-index:3}
+#catta-lorebook .clb-book-menu>summary{padding:2px 7px;border:1px solid #bdd5e8;border-radius:6px;background:#eaf5ff;color:#416b8b;line-height:1.5}
+#catta-lorebook .clb-book-actions{position:absolute;top:32px;right:0;width:195px;max-width:70vw;background:#fffef9;border:1px solid #afcfe6;border-radius:9px;padding:5px;box-shadow:0 13px 28px #071b2e4a}
+#catta-lorebook .clb-book-actions button{display:block;width:100%;text-align:left;border:0;border-radius:6px;background:transparent;color:#305875;min-height:38px;font-size:11px;padding:8px}
+#catta-lorebook .clb-book-actions button:hover{background:#edf6ff}
+#catta-lorebook .clb-search-wrap{display:flex;align-items:center;gap:8px;border:1px solid #c1d9e8;border-radius:9px;padding:0 10px;margin-bottom:10px;background:white;color:#6b91ac}
+#catta-lorebook .clb-search-wrap input{flex:1;min-width:0;border:0;background:transparent;color:#2b526e;padding:10px 0;margin:0;box-shadow:none;width:100%}
+#catta-lorebook .clb-field{display:block;font-size:11px;font-weight:800;color:#385a77;margin:11px 0}
+#catta-lorebook .clb-field input{display:block;width:100%;height:40px;margin:5px 0 0;padding:8px 10px;border:1px solid #c5d8e7;color:#345676;background:white;border-radius:8px;box-shadow:none}
+#catta-lorebook .clb-field input[readonly]{background:#f1f5f9;color:#617a91}
+#catta-lorebook input::placeholder{color:#7990a4;opacity:1}
+#catta-lorebook .clb-upload-intro{display:flex;gap:10px;align-items:center;padding:10px;background:#fff7dc;border:1px solid #efd89d;border-radius:10px}
+#catta-lorebook .clb-upload-intro img{width:52px;height:52px;object-fit:contain}
+#catta-lorebook .clb-upload-intro strong{font-size:12px}
+#catta-lorebook .clb-upload-intro small{display:block;font-size:10px;color:#687e92}
+#catta-lorebook .clb-share{border:0;padding:0;margin:15px 0;min-width:0}
+#catta-lorebook .clb-share legend{font-size:12px;font-weight:800;color:#2b577a;margin-bottom:6px}
+#catta-lorebook .clb-share-choice{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #d4e4ee;border-radius:11px;background:linear-gradient(112deg,#fffefb,#f6fbff);cursor:pointer;margin:7px 0;min-height:59px}
+#catta-lorebook .clb-share-choice:has(input:checked){border-color:#e9bd60;box-shadow:0 0 0 1px #ebbd60a0;background:linear-gradient(115deg,#fff5d8,#fffdfa)}
+#catta-lorebook .clb-share-choice input{flex:none;width:17px;height:17px;accent-color:#b38522;margin:0}
+#catta-lorebook .clb-share-choice strong{font-size:12px;display:block}
+#catta-lorebook .clb-share-choice small{font-size:10px;display:block;color:#6b8195}
+#catta-lorebook .clb-share-detail{margin:0 2px 8px 12px;padding:10px;border:1px solid #e8d7ae;border-left:3px solid #edc26c;border-radius:0 9px 9px;background:#fff9e8}
+#catta-lorebook .clb-role-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#catta-lorebook .clb-role-options label{display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 3px;border:1px solid #c8dbeb;border-radius:8px;background:white;font-size:11px;cursor:pointer}
+#catta-lorebook .clb-role-options input{width:15px;height:15px;accent-color:#bf8e27;margin:0}
+#catta-lorebook .clb-role-options label:has(input:checked){background:#ffecb9;border-color:#e9bb5b}
+#catta-lorebook .clb-share-summary{font-size:11px;line-height:1.7;padding:10px;background:#eaf5fe;border:1px solid #cce5f6;border-radius:9px;color:#4d779a}
+#catta-lorebook .clb-drop-zone{display:flex;flex-direction:column;gap:7px;align-items:center;text-align:center;padding:15px 9px;border:1.5px dashed #97bdda;background:#eaf6ff;border-radius:10px;margin:13px 0;cursor:pointer;font-size:12px;color:#355c79;overflow-wrap:anywhere}
+#catta-lorebook .clb-drop-zone input{width:100%;min-width:0;padding:5px;font-size:10px;background:transparent;border:0;color:#355c79;margin:0}
+#catta-lorebook .clb-drop-zone small{font-size:10px;max-width:100%}
+#catta-lorebook .clb-status{padding:9px;margin:9px 0;background:#fff2cf;border:1px solid #e8c879;border-radius:9px;color:#715520;font-size:11px;overflow-wrap:anywhere}
+#catta-lorebook .clb-status:empty{display:none}
+#catta-lorebook .clb-footer{text-align:center;color:#aac4d7;font-size:10px;font-weight:800;letter-spacing:1px;margin:15px 0 4px}
+#catta-lorebook .clb-footer>span{color:#f2c457}
+#catta-lorebook .clb-footer small{display:block;letter-spacing:0;font-size:9px;font-weight:400;margin-top:3px}
+#catta-lorebook .clb-secondary{border:1px solid #bccfe0;background:#fffdf8;color:#43627e;border-radius:8px;font-size:11px;padding:9px 12px;min-height:40px}
+#catta-lorebook [data-clb=more]{margin-top:10px;width:100%}
+#catta-lorebook .clb-dialog{color:#264963;position:fixed;inset:0;width:min(410px,calc(100vw - 24px));max-height:calc(100dvh - 32px);margin:auto;padding:16px;border:1px solid #bcd9ef;border-radius:16px;background:#fffdf7;box-shadow:0 24px 100px #0009;font:13px/1.6 "Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif;overflow:auto}
+#catta-lorebook .clb-dialog::backdrop{background:#07111bbf}
+#catta-lorebook .clb-dialog-header{display:flex;align-items:center;gap:10px;margin:-16px -16px 14px;padding:15px 16px;background:linear-gradient(110deg,#d8efff,#fff1cd)}
+#catta-lorebook .clb-dialog-header h3{margin:0;flex:1;font-size:15px}
+#catta-lorebook .clb-close{border:0;border-radius:50%;width:30px;height:30px;background:#ffffffbc;color:#62839e;font-size:23px;line-height:1}
+#catta-lorebook .clb-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#catta-lorebook .clb-dialog-actions{display:flex;gap:8px;margin-top:15px}
+#catta-lorebook .clb-dialog-actions>button{flex:1}
+/* Membership lock remains in force for all new UI, including its dialog. */
+#catta-lorebook:not([data-clb-member-gate=authorized]) :is(.clb-tabs,.clb-search-wrap,[data-pane],[data-clb=more],.clb-footer,.clb-dialog){display:none!important}
+#catta-lorebook .clb-member-gate{border:1px solid #ebce8d;border-radius:9px;padding:10px;color:#795b20;background:#fff4d6;margin:8px 0}
+@media(max-width:450px){#catta-lorebook .clb-body{padding:9px 2px}#catta-lorebook .clb-hero{height:140px}#catta-lorebook .clb-hero>div{padding:14px 11px}#catta-lorebook .clb-hero h2{font-size:21px}#catta-lorebook .clb-hero>img{width:133px;bottom:-20px;right:-5px}#catta-lorebook .clb-hero p{max-width:62%;font-size:9px}#catta-lorebook .clb-tabs button{font-size:11px}#catta-lorebook .clb-account{padding:9px}#catta-lorebook .clb-share-choice{padding:9px;gap:8px}}
+@media(max-width:340px){#catta-lorebook .clb-hero>img{width:104px}#catta-lorebook .clb-hero h2{font-size:19px}#catta-lorebook .clb-hero small{font-size:8px}#catta-lorebook .clb-section{padding:9px}#catta-lorebook .clb-options{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){#catta-lorebook :is(button,.clb-track:before){transition:background .15s,transform .15s}}
