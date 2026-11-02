@@ -6,7 +6,7 @@
   "js": "index.js",
   "css": "style.css",
   "author": "Catta Team",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "minimum_client_version": "1.19.0",
   "description": "Catta Lorebook Night: premium dark UI with membership-tier sharing and six-digit access codes.",
   "generate_interceptor": "cattaLorebookPrepare"

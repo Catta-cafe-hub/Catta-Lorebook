@@ -424,22 +424,15 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         } finally { if (pending === pendingPolicy) el('policy-submit').disabled = false; }
     });
     syncUploadPermission(); sharingChanged(); update(runtime.snapshot());
-    // Recover the account card after the membership gate has reverified access.
-    const gateObserver = new MutationObserver(() => {
-        if (root.dataset.clbMemberGate !== 'authorized' || account) return;
-        const epoch = accountEpoch;
-        void cloud.me().then(data => {
-            if (epoch !== accountEpoch || root.dataset.clbMemberGate !== 'authorized') return;
-            renderAccount(data); return refresh();
-        }).catch(showError);
-    });
-    gateObserver.observe(root, { attributes: true, attributeFilter: ['data-clb-member-gate'] });
-    window.addEventListener('pagehide', () => gateObserver.disconnect(), { once: true });
-    if (cloud.hasCredentials()) { const epoch = accountEpoch; void cloud.me().then(data => { if (epoch !== accountEpoch) return; renderAccount(data); return refresh(); }).catch(showError); }
+    // The membership gate is the single source of the initial account request.
     return {
         update, setError: setStatus,
         refreshAccount(data) {
-            if (data?.success && String(data.user?.uid) === cloud.credentials().uid) renderAccount(data, { preserveLogin:true });
+            if (data?.success && String(data.user?.uid) === cloud.credentials().uid) {
+                const initial = !account;
+                renderAccount(data, { preserveLogin:true });
+                if (initial) void refresh();
+            }
         },
         async authorize() {
             const ctx = context(), originalKey = key(), book = selected();
