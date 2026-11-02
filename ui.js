@@ -6,7 +6,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
     const asset = name => new URL(`./assets/${name}.webp`, import.meta.url).href;
     root.innerHTML = `
       <details class="clb-shell" open>
-        <summary class="clb-header"><span class="clb-brand">▤ <span>Catta Lorebook<small>CATTA CAFÉ EXTENSION</small></span></span><span class="clb-chevron">⌄</span></summary>
+        <summary class="clb-header"><span class="clb-brand"><img class="clb-brand-icon" src="${asset('icon_magic_book')}" width="34" height="38" alt="" aria-hidden="true"><span>Catta Lorebook<small>CATTA CAFÉ EXTENSION</small></span></span><span class="clb-chevron">⌄</span></summary>
         <div class="clb-body">
           <section class="clb-hero"><div><small>✦ CATTA CLOUD LIBRARY</small><h2>เรื่องราวของคุณ<br><span>อยู่ใกล้แค่เอื้อม</span></h2><p>จัดเก็บ ค้นหา และเลือกใช้ Lorebook<br>บน SillyTavern ได้ในที่เดียว</p></div><img src="${asset('mascot_reading')}" alt="" aria-hidden="true"></section>
           <section class="clb-account"><div class="clb-account-line"><img src="${asset('mascot_happy')}" alt=""><div><small>บัญชี Catta</small><p data-clb="account">ยังไม่ได้เชื่อมบัญชี Catta</p><span data-clb="quota" class="clb-note"></span></div></div>
@@ -23,15 +23,15 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
           </nav>
           <div data-clb="search-wrap" class="clb-search-wrap" hidden><span>⌕</span><input data-clb="search" type="search" aria-label="ค้นหา Lorebook" placeholder="ชื่อ Lorebook / ผู้สร้าง / รหัส…" autocomplete="off"></div>
           <div data-pane="mine" id="clb-pane-mine" role="tabpanel" aria-labelledby="clb-tab-mine">
-            <section class="clb-section"><h3>✦ Lorebook ที่เลือก</h3><div data-clb="selected"></div>
+            <section class="clb-section clb-selected-section"><img class="clb-bookmark" src="${asset('bookmark_paw')}" width="20" height="38" alt="" aria-hidden="true"><h3>✦ Lorebook ที่เลือก</h3><div data-clb="selected"></div>
               <div data-clb="active" class="clb-active" hidden><label class="clb-enable"><span>เชื่อมกับแชทนี้</span><input data-clb="enabled" type="checkbox" role="switch"><span class="clb-track" aria-hidden="true"></span></label><p data-clb="loaded" class="clb-note"></p></div>
             </section>
             <button type="button" data-clb="start" class="clb-primary clb-start" aria-haspopup="dialog" aria-controls="clb-setup" disabled>⚙ เริ่มใช้งาน <span>✦</span></button>
             <p data-clb="start-hint" class="clb-caption">เลือก Lorebook แล้วเปิดเชื่อมกับแชทนี้</p>
-            <section class="clb-section clb-library"><h3>คลังของฉัน</h3><div data-clb="mine-list" class="clb-list"></div></section>
+            <section class="clb-section clb-library"><h3 class="clb-section-heading"><img src="${asset('icon_folder')}" width="30" height="30" alt="" aria-hidden="true">คลังของฉัน</h3><div data-clb="mine-list" class="clb-list"></div></section>
           </div>
-          <div data-pane="search" id="clb-pane-search" role="tabpanel" aria-labelledby="clb-tab-search" hidden><section class="clb-section"><h3>☁ ค้นหาใน Cloud Catta</h3><div data-clb="search-list" class="clb-list"></div></section></div>
-          <div data-pane="upload" id="clb-pane-upload" role="tabpanel" aria-labelledby="clb-tab-upload" hidden><section class="clb-section"><h3>↥ เพิ่ม Lorebook ใหม่</h3>
+          <div data-pane="search" id="clb-pane-search" role="tabpanel" aria-labelledby="clb-tab-search" hidden><section class="clb-section"><h3 class="clb-section-heading"><img class="clb-cloud-icon" src="${asset('cloud_decor')}" width="34" height="22" alt="" aria-hidden="true">ค้นหาใน Cloud Catta</h3><div data-clb="search-list" class="clb-list"></div></section></div>
+          <div data-pane="upload" id="clb-pane-upload" role="tabpanel" aria-labelledby="clb-tab-upload" hidden><section class="clb-section"><h3 class="clb-section-heading"><img src="${asset('icon_cloud_upload')}" width="34" height="30" alt="" aria-hidden="true">เพิ่ม Lorebook ใหม่</h3>
             <div class="clb-upload-intro"><img src="${asset('icon_magic_book')}" alt=""><span><strong>เก็บเรื่องราวไว้บน Cloud</strong><small>ไฟล์ World Info JSON จาก SillyTavern · สูงสุด 2 MB</small></span></div>
             <form data-clb="upload-form">
               <label class="clb-field">ชื่อ Lorebook<input data-clb="title" maxlength="100" required autocomplete="off" placeholder="เช่น เมืองแห่งสายหมอก"></label>
@@ -52,7 +52,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
           </section></div>
           <button type="button" data-clb="more" class="clb-secondary" hidden>โหลดรายการเพิ่ม</button>
           <p data-clb="status" class="clb-status" role="status" aria-live="polite"></p>
-          <footer class="clb-footer">CATTA <span>✦</span> LOREBOOK<small>สิทธิ์เนื้อหา · เนื้อหาและงานเขียน Prompt ใน Lorebook เป็นผลงานและทรัพย์สินทางปัญญาของผู้สร้างแต่ละราย โปรดใช้งานตามสิทธิ์ที่ผู้สร้างกำหนด ห้ามคัดลอก ดัดแปลง เผยแพร่ หรือนำเนื้อหาไปใช้ต่อนอกสิทธิ์ที่ได้รับ</small></footer>
+          <footer class="clb-footer"><div class="clb-footer-art" aria-hidden="true"><img class="clb-cuddle" src="${asset('mascot_cuddling_cat')}" width="76" height="78" alt=""><img class="clb-paw-stars" src="${asset('paw_stars_decor')}" width="72" height="36" alt=""></div>CATTA <span>✦</span> LOREBOOK<small>สิทธิ์เนื้อหา · เนื้อหาและงานเขียน Prompt ใน Lorebook เป็นผลงานและทรัพย์สินทางปัญญาของผู้สร้างแต่ละราย โปรดใช้งานตามสิทธิ์ที่ผู้สร้างกำหนด ห้ามคัดลอก ดัดแปลง เผยแพร่ หรือนำเนื้อหาไปใช้ต่อนอกสิทธิ์ที่ได้รับ</small></footer>
           <dialog data-clb="setup" id="clb-setup" class="clb-dialog" aria-labelledby="clb-setup-title"><form data-clb="setup-form">
             <div class="clb-dialog-header"><span>⚙</span><h3 id="clb-setup-title">ตั้งค่าก่อนเริ่มใช้งาน</h3><button type="button" data-clb="close-setup" class="clb-close" aria-label="ปิดการตั้งค่า">×</button></div>
             <p class="clb-note">ตั้งค่าการจับข้อความและงบโทเคนสำหรับ Lorebook ที่เลือก</p>

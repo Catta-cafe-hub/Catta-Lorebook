@@ -186,3 +186,99 @@
 }
 @media (max-width: 340px) { #catta-lorebook .clb-options { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: no-preference) { #catta-lorebook button, #catta-lorebook .clb-track::before { transition: background .16s, border-color .16s, transform .16s; } }
+
+/* Blue & Gold Night: restore Catta's colored bars over deep navy surfaces. */
+#catta-lorebook { --clb-ink:#e8f1fa; --clb-muted:#b0c3d5; --clb-line:#314c66; --clb-surface:#111e2c; --clb-raised:#192d40; --clb-gold:#e5c17a; background:#0b1420; border-color:#334d65; }
+#catta-lorebook :is(button,input,select,summary):focus-visible { outline-color:#e8c47e; }
+#catta-lorebook .clb-header { background:linear-gradient(110deg,#245779,#15344f 78%); border-left:4px solid #e4bf73; border-bottom-color:#416584; box-shadow:0 1px 0 #b7ddff14 inset; }
+#catta-lorebook .clb-brand { color:#f1d597; }
+#catta-lorebook .clb-brand > span { color:#f4f8ff; }
+#catta-lorebook .clb-brand small { color:#b9d4ea; }
+#catta-lorebook .clb-chevron { border-color:#7197b26e; background:#07233c45; color:#d3e9f9; }
+#catta-lorebook .clb-hero { border-color:#365d7e; background:radial-gradient(ellipse at 94% 65%,#3b586b 0,#1d3b55 40%,#102235 85%); }
+#catta-lorebook .clb-hero::before { border-color:#b4d8f414; }
+#catta-lorebook .clb-hero small { color:#adcfe9; }
+#catta-lorebook .clb-hero h2 { color:#f1f7ff; }
+#catta-lorebook .clb-hero h2 span { color:#ebca88; }
+#catta-lorebook .clb-hero p { color:#bbd0e1; }
+#catta-lorebook .clb-account { background:linear-gradient(115deg,#192b3d,#121f2d); border-color:#344c63; }
+#catta-lorebook .clb-account-line > img { background:#213345; border-color:#ad945f; }
+#catta-lorebook .clb-account-line small, #catta-lorebook [data-clb=quota] { color:#b8cddd; }
+#catta-lorebook [data-clb=login-box] { border-top-color:#334b61; color:#9fc7e5; }
+#catta-lorebook .clb-tabs { border-color:#36546e; background:#0e2134; }
+#catta-lorebook .clb-tabs button { color:#b8d8ef; }
+#catta-lorebook .clb-tabs button[aria-selected=true] { border-color:#e3bf78; background:linear-gradient(120deg,#e7ca8b,#c5a160); color:#192d43; box-shadow:0 1px 0 #fff4ce3d inset,0 3px 9px #0003; }
+#catta-lorebook .clb-tabs button:hover:not([aria-selected=true]) { color:#eef8ff; background:#1a3a54; }
+#catta-lorebook .clb-section { border-color:#304d67; background:linear-gradient(135deg,#142638,#101d2c); }
+#catta-lorebook h3 { color:#d8eafb; }
+#catta-lorebook .clb-card { border-color:#3d5870; background:linear-gradient(145deg,#1a2c3e,#142131); }
+#catta-lorebook .clb-card-title { padding:8px 34px 8px 10px; margin-bottom:3px; border-left:2px solid #d9b670; border-radius:6px; background:linear-gradient(100deg,#285373,#193a56); color:#f1f7fd; }
+#catta-lorebook .clb-card-meta { color:#bed0df; }
+#catta-lorebook .clb-card-id { color:#9db3c8; }
+#catta-lorebook .clb-badge { background:#382f2040; border-color:#9b834e; color:#e8c98b; }
+#catta-lorebook .clb-select { background:#234b6a; border-color:#5b83a1; color:#e7f3ff; }
+#catta-lorebook .clb-select:hover:not(:disabled) { background:#2e6286; border-color:#89b2ce; }
+#catta-lorebook .clb-empty { background:#0e1b2a; border-color:#4a6680; color:#b6cadd; }
+#catta-lorebook .clb-enable { color:#d1e2f2; }
+#catta-lorebook .clb-enable input:checked + .clb-track { background:#c7a45e; border-color:#e7c987; }
+#catta-lorebook .clb-enable input:checked + .clb-track::before { background:#fff3d5; }
+#catta-lorebook .clb-enable input:focus-visible + .clb-track { outline-color:#e6c27b; }
+#catta-lorebook .clb-primary { border-color:#6089a9; background:linear-gradient(#2c5a7c,#1c3e5b); color:#edf7ff; box-shadow:0 1px 0 #d6ecff14 inset,0 4px 10px #0003; }
+#catta-lorebook .clb-primary:hover:not(:disabled) { border-color:#8cb6d5; background:linear-gradient(#37709a,#255474); }
+#catta-lorebook .clb-start { border-color:#e2bc70; background:linear-gradient(120deg,#edd394,#c5a05d); color:#1a2c3f; box-shadow:0 1px 0 #fff5d54d inset,0 6px 18px #0005; }
+#catta-lorebook .clb-start:hover:not(:disabled) { border-color:#f8dc9e; background:linear-gradient(120deg,#f4dfad,#d4b171); }
+#catta-lorebook .clb-start:disabled { border-color:#7c6946; background:linear-gradient(120deg,#3e3a2f,#302c24); color:#d7c49d; opacity:.8; }
+#catta-lorebook .clb-start > span { color:#80632f; }
+#catta-lorebook .clb-caption { color:#b3c9df; }
+#catta-lorebook .clb-secondary { border-color:#4c708e; background:#1b354c; color:#d6e9f8; }
+#catta-lorebook .clb-secondary:hover:not(:disabled) { border-color:#81aac9; background:#284c68; }
+#catta-lorebook .clb-book-menu > summary { border-color:#66829b; background:#1d3b54; color:#dcefff; }
+#catta-lorebook .clb-book-actions { border-color:#587c9b; background:#182e43; }
+#catta-lorebook .clb-book-actions button { color:#dcecf9; }
+#catta-lorebook .clb-book-actions button:hover { background:#2a4b65; }
+#catta-lorebook .clb-search-wrap { border-color:#4a7091; background:#0f2336; color:#a5cce8; }
+#catta-lorebook .clb-search-wrap input { color:#e4f1fc; }
+#catta-lorebook .clb-field { color:#ccdfef; }
+#catta-lorebook .clb-field :is(input,select) { border-color:#456783; background:#0b1b2b; color:#e6f1fc; }
+#catta-lorebook .clb-field input[readonly] { border-color:#36536c; background:#182c40; color:#bcd0e2; }
+#catta-lorebook .clb-field small { color:#b1c5d9; }
+#catta-lorebook input::placeholder { color:#9eb6cc; }
+#catta-lorebook :is(input[type=radio],input[type=checkbox]) { accent-color:#d8b76d; }
+#catta-lorebook .clb-upload-intro { border-color:#6b6147; background:linear-gradient(110deg,#303326,#172c3e); }
+#catta-lorebook .clb-upload-intro strong { color:#eed49e; }
+#catta-lorebook .clb-upload-intro small { color:#c2d3df; }
+#catta-lorebook .clb-share legend { color:#dbe9f7; }
+#catta-lorebook .clb-share-choice { border-color:#3d5c77; background:#162b3f; }
+#catta-lorebook .clb-share-choice:has(input:checked) { border-color:#c8a863; background:linear-gradient(110deg,#3c3c2d,#223346); box-shadow:3px 0 0 #e2bd70 inset,0 1px 0 #fff4d008 inset; }
+#catta-lorebook .clb-share-choice:focus-within { outline-color:#e5c47f; }
+#catta-lorebook .clb-share-choice strong { color:#eaf3fd; }
+#catta-lorebook .clb-share-choice small { color:#b9cfdf; }
+#catta-lorebook .clb-share-detail { border-color:#8b794f; border-left-color:#dfbe77; background:#1c3041; }
+#catta-lorebook .clb-role-options label { border-color:#52728c; background:#13283b; color:#ccdfef; }
+#catta-lorebook .clb-role-options label:has(input:checked) { border-color:#c6a867; background:#49412d; color:#f9e1ac; }
+#catta-lorebook .clb-share-summary { border-color:#4b7291; background:#1a3a53; color:#c4e0f4; }
+#catta-lorebook .clb-drop-zone { border-color:#6c93b1; background:#10283c; color:#d6eafb; }
+#catta-lorebook .clb-drop-zone input::file-selector-button { border-color:#698fab; background:#2a4d68; color:#eef7ff; }
+#catta-lorebook .clb-status { border-color:#8a784f; background:#31332b; color:#e8d19e; }
+#catta-lorebook .clb-footer { border-top-color:#2d475f; color:#b6ccdf; }
+#catta-lorebook .clb-footer > span { color:#e0bd74; }
+#catta-lorebook .clb-footer small { color:#adc0d2; }
+#catta-lorebook .clb-dialog { border-color:#547c9e; background:#122336; color:#deedf9; }
+#catta-lorebook .clb-dialog-header { border-bottom-color:#56728a; background:linear-gradient(115deg,#285675,#183a55); box-shadow:3px 0 0 #d9b672 inset; }
+#catta-lorebook .clb-dialog-header > span { color:#e9c986; }
+#catta-lorebook .clb-dialog-header h3 { color:#ecf6ff; }
+#catta-lorebook .clb-close { border-color:#6b94b3; background:#294e6a; color:#e5f4ff; }
+#catta-lorebook .clb-member-gate { border-color:#8b784b; background:#2e332d; color:#e9d3a5; }
+
+/* Original Catta artwork, sized independently from controls and text. */
+#catta-lorebook .clb-brand-icon { flex:none; width:34px; height:38px; object-fit:contain; filter:drop-shadow(0 3px 4px #0005); }
+#catta-lorebook .clb-selected-section { position:relative; }
+#catta-lorebook .clb-selected-section > h3 { padding-right:31px; }
+#catta-lorebook .clb-bookmark { position:absolute; right:14px; top:-1px; width:20px; height:38px; object-fit:contain; pointer-events:none; filter:drop-shadow(0 2px 3px #0005); }
+#catta-lorebook .clb-section-heading { display:flex; align-items:center; gap:9px; min-height:30px; }
+#catta-lorebook .clb-section-heading > img { flex:none; width:30px; height:30px; object-fit:contain; pointer-events:none; }
+#catta-lorebook .clb-section-heading > .clb-cloud-icon { width:34px; height:22px; }
+#catta-lorebook .clb-footer-art { display:flex; align-items:center; justify-content:center; gap:14px; height:84px; margin:-5px 0 8px; pointer-events:none; }
+#catta-lorebook .clb-footer-art > img { display:block; flex:none; object-fit:contain; filter:drop-shadow(0 4px 6px #0004); }
+#catta-lorebook .clb-cuddle { width:76px; height:78px; }
+#catta-lorebook .clb-paw-stars { width:72px; height:36px; }
