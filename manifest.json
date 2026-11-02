@@ -6,8 +6,8 @@
   "js": "index.js",
   "css": "style.css",
   "author": "Catta Team",
-  "version": "0.3.2",
+  "version": "0.4.2",
   "minimum_client_version": "1.19.0",
-  "description": "Catta cloud Lorebook library with chat-specific selection and yellow-blue UI.",
+  "description": "Catta Lorebook Night: premium dark UI with membership-tier sharing and six-digit access codes.",
   "generate_interceptor": "cattaLorebookPrepare"
 }

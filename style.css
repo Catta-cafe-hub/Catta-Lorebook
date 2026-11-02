@@ -1,113 +1,188 @@
-/* Scoped to this extension: never restyle SillyTavern or the other Catta panels. */
-#catta-lorebook{--clb-ink:#244d70;--clb-muted:#688198;--clb-line:#bcd6e9;--clb-sky:#e8f5ff;--clb-gold:#ffd575;color:var(--clb-ink);background:transparent;border:0;margin:10px 0;padding:0;font:13px/1.6 "Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif;text-shadow:none;isolation:isolate;min-width:0}
-#catta-lorebook *{box-sizing:border-box;text-shadow:none}
-#catta-lorebook [hidden]{display:none!important}
-#catta-lorebook :is(button,input){font:inherit;color:inherit}
-#catta-lorebook button{cursor:pointer;margin:0;min-width:0;max-width:100%;box-shadow:none;text-shadow:none;width:auto}
-#catta-lorebook button:disabled{cursor:not-allowed;opacity:.58}
-#catta-lorebook :is(button,input,summary):focus-visible{outline:3px solid #c2912a;outline-offset:3px}
-#catta-lorebook summary{cursor:pointer;list-style:none}
-#catta-lorebook summary::-webkit-details-marker{display:none}
-#catta-lorebook .clb-header{display:flex;align-items:center;justify-content:space-between;min-height:55px;padding:9px 14px;background:linear-gradient(110deg,#1c3656,#2c5679);border:1px solid #547ba5;border-left:5px solid #ffdb75;border-radius:12px;color:#fff;box-shadow:0 5px 20px #07111d30}
-#catta-lorebook .clb-brand{display:flex;gap:10px;align-items:center;font-size:21px;color:#ffe2a0}
-#catta-lorebook .clb-brand>span{font-size:17px;line-height:1.35;font-weight:800;color:#fff}
-#catta-lorebook .clb-brand small{display:block;font-size:8px;letter-spacing:1.4px;color:#c4e3f9}
-#catta-lorebook .clb-chevron{display:grid;place-items:center;border-radius:50%;width:28px;height:28px;background:#ffffff1a;border:1px solid #ffffff3d}
-#catta-lorebook .clb-shell:not([open]) .clb-chevron{transform:rotate(-90deg)}
-#catta-lorebook .clb-body{padding:12px 5px 8px}
-#catta-lorebook .clb-hero{height:150px;border:1px solid #9fc9ed;border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(122deg,#f7fbff,#e2f2ff 48%,#c5e7ff);box-shadow:0 5px 20px #07111d1a}
-#catta-lorebook .clb-hero>div{position:relative;z-index:2;padding:16px}
-#catta-lorebook .clb-hero small{font-size:9px;letter-spacing:1.1px;color:#3878a5;font-weight:800}
-#catta-lorebook .clb-hero h2{font-size:24px;line-height:1.35;margin:5px 0;color:#174775;font-weight:900}
-#catta-lorebook .clb-hero h2 span{color:#bf8015}
-#catta-lorebook .clb-hero p{font-size:10px;line-height:1.5;margin:0;color:#526f8b}
-#catta-lorebook .clb-hero>img{position:absolute;width:165px;height:auto;right:0;bottom:-28px;pointer-events:none}
-#catta-lorebook .clb-account{margin:10px 0 12px;background:linear-gradient(115deg,#fffdf8,#f2f9ff);border:1px solid #d8e7f2;border-radius:12px;padding:11px;box-shadow:0 5px 20px #07111d1a}
-#catta-lorebook .clb-account-line{display:flex;gap:10px;align-items:center;min-width:0}
-#catta-lorebook .clb-account-line>img{width:47px;height:47px;object-fit:contain;border-radius:50%;background:#fff3ce;border:2px solid #ffd879}
-#catta-lorebook .clb-account-line>div{flex:1;min-width:0;overflow-wrap:anywhere}
-#catta-lorebook .clb-account-line small{font-size:10px;color:#6b8097}
-#catta-lorebook [data-clb=account]{margin:0;font-size:13px;font-weight:800}
-#catta-lorebook [data-clb=quota]{font-size:10px}
-#catta-lorebook [data-clb=login-box]{font-size:11px;margin-top:8px;color:#487595}
-#catta-lorebook .clb-tabs{display:flex;gap:5px;background:#f1f8ffed;border:1px solid var(--clb-line);padding:5px;border-radius:12px;margin-bottom:12px}
-#catta-lorebook .clb-tabs button{flex:1;min-height:42px;padding:7px 3px;border:1px solid transparent;border-radius:9px;background:transparent;color:#2b658e;font-size:12px;font-weight:800;white-space:nowrap}
-#catta-lorebook .clb-tabs button[aria-selected=true]{background:linear-gradient(#ffe8ae,#ffd16b);border-color:#ecbc4e;color:#254667;box-shadow:inset 0 1px #fffbeb,0 2px 4px #92642426}
-#catta-lorebook .clb-tabs button:hover{filter:brightness(.98)}
-#catta-lorebook .clb-section{background:linear-gradient(#f7fbfff5,#f9fbfff5);border:1px solid #abcfe8;border-radius:12px;padding:11px;box-shadow:0 5px 20px #07111d1a}
-#catta-lorebook h3{margin:0 0 10px;font-size:14px;font-weight:800;color:#244e74}
-#catta-lorebook .clb-library{margin-top:15px}
-#catta-lorebook .clb-list{display:flex;flex-direction:column;gap:9px}
-#catta-lorebook .clb-card{display:flex;flex-direction:column;gap:4px;position:relative;padding:12px;background:linear-gradient(145deg,#fffdf8,#fff9ec);border:1px solid #e9d7b6;border-radius:12px;min-width:0;overflow-wrap:anywhere;box-shadow:0 2px 8px #68583714}
-#catta-lorebook .clb-card-title{display:block;font-size:16px;color:#1a3e63;padding-right:36px}
-#catta-lorebook .clb-card-meta{color:#65798d;font-size:11px}
-#catta-lorebook .clb-card-id{font-size:9px;color:#778596;overflow-wrap:anywhere}
-#catta-lorebook .clb-badge{display:inline-block;align-self:flex-start;color:#7d6129;background:#fff0c6;border:1px solid #f4d891;padding:2px 7px;border-radius:6px;font-size:10px;margin-top:3px}
-#catta-lorebook .clb-select{align-self:flex-end;padding:6px 14px;border-radius:7px;border:1px solid #efcb83;background:#ffebba;color:#70522f;font-size:11px;font-weight:800}
-#catta-lorebook .clb-empty{padding:23px 12px;text-align:center;background:linear-gradient(#fffdf7,#fff8e9);border:1px dashed #e5c783;border-radius:10px;color:#68788d;margin:0;font-size:12px}
-#catta-lorebook .clb-active{padding:11px 0 0}
-#catta-lorebook .clb-enable{display:flex;align-items:center;justify-content:space-between;position:relative;gap:8px;cursor:pointer;font-size:12px;font-weight:800}
-#catta-lorebook .clb-enable input{position:absolute;opacity:0;width:1px;height:1px;right:10px}
-#catta-lorebook .clb-track{width:40px;height:24px;padding:3px;border-radius:30px;background:#d6e0e7;border:1px solid #c0d0d7;display:block;flex:none}
-#catta-lorebook .clb-track:before{content:"";width:16px;height:16px;display:block;border-radius:50%;background:#fff;box-shadow:0 2px 3px #172c3b35}
-#catta-lorebook .clb-enable input:checked+.clb-track{background:#ffd16c;border-color:#edb94e}
-#catta-lorebook .clb-enable input:checked+.clb-track:before{transform:translateX(16px)}
-#catta-lorebook .clb-enable input:focus-visible+.clb-track{outline:3px solid #c2912a;outline-offset:3px}
-#catta-lorebook .clb-primary{display:block;width:100%;border:1px solid #e0b151;border-radius:10px;background:linear-gradient(#ffeaaa,#ffd16b);color:#254e70;min-height:42px;padding:9px 12px;font-size:12px;font-weight:800}
-#catta-lorebook .clb-primary:hover:not(:disabled){filter:brightness(1.04)}
-#catta-lorebook .clb-start{font-size:15px;min-height:48px;margin-top:12px;box-shadow:0 3px 0 #d1a64c,0 8px 20px #4b381a20}
-#catta-lorebook .clb-start>span{color:#c99725;margin-left:8px}
-#catta-lorebook .clb-caption{font-size:10px;text-align:center;margin:10px 2px;color:#b5cde0}
-#catta-lorebook .clb-note{font-size:11px;color:var(--clb-muted);line-height:1.7;margin:7px 0}
-#catta-lorebook .clb-book-menu{position:absolute;top:9px;right:9px;z-index:3}
-#catta-lorebook .clb-book-menu>summary{padding:2px 7px;border:1px solid #bdd5e8;border-radius:6px;background:#eaf5ff;color:#416b8b;line-height:1.5}
-#catta-lorebook .clb-book-actions{position:absolute;top:32px;right:0;width:195px;max-width:70vw;background:#fffef9;border:1px solid #afcfe6;border-radius:9px;padding:5px;box-shadow:0 13px 28px #071b2e4a}
-#catta-lorebook .clb-book-actions button{display:block;width:100%;text-align:left;border:0;border-radius:6px;background:transparent;color:#305875;min-height:38px;font-size:11px;padding:8px}
-#catta-lorebook .clb-book-actions button:hover{background:#edf6ff}
-#catta-lorebook .clb-search-wrap{display:flex;align-items:center;gap:8px;border:1px solid #c1d9e8;border-radius:9px;padding:0 10px;margin-bottom:10px;background:white;color:#6b91ac}
-#catta-lorebook .clb-search-wrap input{flex:1;min-width:0;border:0;background:transparent;color:#2b526e;padding:10px 0;margin:0;box-shadow:none;width:100%}
-#catta-lorebook .clb-field{display:block;font-size:11px;font-weight:800;color:#385a77;margin:11px 0}
-#catta-lorebook .clb-field input{display:block;width:100%;height:40px;margin:5px 0 0;padding:8px 10px;border:1px solid #c5d8e7;color:#345676;background:white;border-radius:8px;box-shadow:none}
-#catta-lorebook .clb-field input[readonly]{background:#f1f5f9;color:#617a91}
-#catta-lorebook input::placeholder{color:#7990a4;opacity:1}
-#catta-lorebook .clb-upload-intro{display:flex;gap:10px;align-items:center;padding:10px;background:#fff7dc;border:1px solid #efd89d;border-radius:10px}
-#catta-lorebook .clb-upload-intro img{width:52px;height:52px;object-fit:contain}
-#catta-lorebook .clb-upload-intro strong{font-size:12px}
-#catta-lorebook .clb-upload-intro small{display:block;font-size:10px;color:#687e92}
-#catta-lorebook .clb-share{border:0;padding:0;margin:15px 0;min-width:0}
-#catta-lorebook .clb-share legend{font-size:12px;font-weight:800;color:#2b577a;margin-bottom:6px}
-#catta-lorebook .clb-share-choice{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #d4e4ee;border-radius:11px;background:linear-gradient(112deg,#fffefb,#f6fbff);cursor:pointer;margin:7px 0;min-height:59px}
-#catta-lorebook .clb-share-choice:has(input:checked){border-color:#e9bd60;box-shadow:0 0 0 1px #ebbd60a0;background:linear-gradient(115deg,#fff5d8,#fffdfa)}
-#catta-lorebook .clb-share-choice input{flex:none;width:17px;height:17px;accent-color:#b38522;margin:0}
-#catta-lorebook .clb-share-choice strong{font-size:12px;display:block}
-#catta-lorebook .clb-share-choice small{font-size:10px;display:block;color:#6b8195}
-#catta-lorebook .clb-share-detail{margin:0 2px 8px 12px;padding:10px;border:1px solid #e8d7ae;border-left:3px solid #edc26c;border-radius:0 9px 9px;background:#fff9e8}
-#catta-lorebook .clb-role-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
-#catta-lorebook .clb-role-options label{display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 3px;border:1px solid #c8dbeb;border-radius:8px;background:white;font-size:11px;cursor:pointer}
-#catta-lorebook .clb-role-options input{width:15px;height:15px;accent-color:#bf8e27;margin:0}
-#catta-lorebook .clb-role-options label:has(input:checked){background:#ffecb9;border-color:#e9bb5b}
-#catta-lorebook .clb-share-summary{font-size:11px;line-height:1.7;padding:10px;background:#eaf5fe;border:1px solid #cce5f6;border-radius:9px;color:#4d779a}
-#catta-lorebook .clb-drop-zone{display:flex;flex-direction:column;gap:7px;align-items:center;text-align:center;padding:15px 9px;border:1.5px dashed #97bdda;background:#eaf6ff;border-radius:10px;margin:13px 0;cursor:pointer;font-size:12px;color:#355c79;overflow-wrap:anywhere}
-#catta-lorebook .clb-drop-zone input{width:100%;min-width:0;padding:5px;font-size:10px;background:transparent;border:0;color:#355c79;margin:0}
-#catta-lorebook .clb-drop-zone small{font-size:10px;max-width:100%}
-#catta-lorebook .clb-status{padding:9px;margin:9px 0;background:#fff2cf;border:1px solid #e8c879;border-radius:9px;color:#715520;font-size:11px;overflow-wrap:anywhere}
-#catta-lorebook .clb-status:empty{display:none}
-#catta-lorebook .clb-footer{text-align:center;color:#aac4d7;font-size:10px;font-weight:800;letter-spacing:1px;margin:15px 0 4px}
-#catta-lorebook .clb-footer>span{color:#f2c457}
-#catta-lorebook .clb-footer small{display:block;letter-spacing:0;font-size:9px;font-weight:400;margin-top:3px}
-#catta-lorebook .clb-secondary{border:1px solid #bccfe0;background:#fffdf8;color:#43627e;border-radius:8px;font-size:11px;padding:9px 12px;min-height:40px}
-#catta-lorebook [data-clb=more]{margin-top:10px;width:100%}
-#catta-lorebook .clb-dialog{color:#264963;position:fixed;inset:0;width:min(410px,calc(100vw - 24px));max-height:calc(100dvh - 32px);margin:auto;padding:16px;border:1px solid #bcd9ef;border-radius:16px;background:#fffdf7;box-shadow:0 24px 100px #0009;font:13px/1.6 "Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif;overflow:auto}
-#catta-lorebook .clb-dialog::backdrop{background:#07111bbf}
-#catta-lorebook .clb-dialog-header{display:flex;align-items:center;gap:10px;margin:-16px -16px 14px;padding:15px 16px;background:linear-gradient(110deg,#d8efff,#fff1cd)}
-#catta-lorebook .clb-dialog-header h3{margin:0;flex:1;font-size:15px}
-#catta-lorebook .clb-close{border:0;border-radius:50%;width:30px;height:30px;background:#ffffffbc;color:#62839e;font-size:23px;line-height:1}
-#catta-lorebook .clb-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-#catta-lorebook .clb-dialog-actions{display:flex;gap:8px;margin-top:15px}
-#catta-lorebook .clb-dialog-actions>button{flex:1}
-/* Membership lock remains in force for all new UI, including its dialog. */
-#catta-lorebook:not([data-clb-member-gate=authorized]) :is(.clb-tabs,.clb-search-wrap,[data-pane],[data-clb=more],.clb-footer,.clb-dialog){display:none!important}
-#catta-lorebook .clb-member-gate{border:1px solid #ebce8d;border-radius:9px;padding:10px;color:#795b20;background:#fff4d6;margin:8px 0}
-@media(max-width:450px){#catta-lorebook .clb-body{padding:9px 2px}#catta-lorebook .clb-hero{height:140px}#catta-lorebook .clb-hero>div{padding:14px 11px}#catta-lorebook .clb-hero h2{font-size:21px}#catta-lorebook .clb-hero>img{width:133px;bottom:-20px;right:-5px}#catta-lorebook .clb-hero p{max-width:62%;font-size:9px}#catta-lorebook .clb-tabs button{font-size:11px}#catta-lorebook .clb-account{padding:9px}#catta-lorebook .clb-share-choice{padding:9px;gap:8px}}
-@media(max-width:340px){#catta-lorebook .clb-hero>img{width:104px}#catta-lorebook .clb-hero h2{font-size:19px}#catta-lorebook .clb-hero small{font-size:8px}#catta-lorebook .clb-section{padding:9px}#catta-lorebook .clb-options{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:no-preference){#catta-lorebook :is(button,.clb-track:before){transition:background .15s,transform .15s}}
+/* Catta Night: scoped to this panel; permission and generation logic is unchanged. */
+#catta-lorebook {
+    --clb-ink: #eeeef1;
+    --clb-muted: #a7a9b3;
+    --clb-line: #30323a;
+    --clb-surface: #16171b;
+    --clb-raised: #1d1f25;
+    --clb-silver: #d5d7de;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin: 12px 0;
+    padding: 0;
+    border: 1px solid #34363e;
+    border-radius: 16px;
+    background: #0d0e11;
+    color: var(--clb-ink);
+    color-scheme: dark;
+    font: 13px/1.65 "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif;
+    text-shadow: none;
+    isolation: isolate;
+    container-type: inline-size;
+    box-shadow: 0 14px 40px #0004, 0 1px 0 #ffffff08 inset;
+}
+#catta-lorebook * { box-sizing: border-box; text-shadow: none; }
+#catta-lorebook [hidden] { display: none !important; }
+#catta-lorebook :is(button, input, select) { font: inherit; color: inherit; }
+#catta-lorebook button { cursor: pointer; margin: 0; min-width: 0; max-width: 100%; width: auto; box-shadow: none; text-shadow: none; }
+#catta-lorebook button:disabled { cursor: not-allowed; opacity: .58; }
+#catta-lorebook :is(button, input, select, summary):focus-visible { outline: 2px solid #d5d7e1; outline-offset: 3px; }
+#catta-lorebook summary { cursor: pointer; list-style: none; }
+#catta-lorebook summary::-webkit-details-marker { display: none; }
+
+/* Quiet chrome, generous spacing, and a single silver action. */
+#catta-lorebook .clb-header { display: flex; align-items: center; justify-content: space-between; min-height: 62px; padding: 12px 16px; border: 0; border-bottom: 1px solid #30323a; border-radius: 15px 15px 0 0; background: linear-gradient(115deg, #202127, #15161a 75%); color: #f3f3f5; box-shadow: 0 1px 0 #ffffff05 inset; }
+#catta-lorebook .clb-brand { display: flex; align-items: center; gap: 11px; color: #c5c8d1; font-size: 22px; }
+#catta-lorebook .clb-brand > span { font-size: 16px; font-weight: 700; line-height: 1.45; letter-spacing: .15px; color: #f1f1f4; }
+#catta-lorebook .clb-brand small { display: block; margin-top: 2px; color: #9295a1; font-size: 8px; font-weight: 500; letter-spacing: 1.8px; }
+#catta-lorebook .clb-chevron { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid #41434c; border-radius: 50%; background: #ffffff04; color: #b6b8c1; }
+#catta-lorebook .clb-shell:not([open]) .clb-chevron { transform: rotate(-90deg); }
+#catta-lorebook .clb-shell:not([open]) > .clb-header { border-bottom-color: transparent; border-radius: 15px; }
+#catta-lorebook .clb-body { padding: 14px 12px 12px; }
+
+#catta-lorebook .clb-hero { position: relative; min-width: 0; height: 184px; overflow: hidden; border: 1px solid #363840; border-radius: 13px; background: radial-gradient(ellipse at 94% 70%, #34363f 0, #202127 38%, #141519 80%); box-shadow: 0 1px 0 #ffffff06 inset; }
+#catta-lorebook .clb-hero::before { content: ""; position: absolute; width: 240px; height: 240px; right: -80px; top: -105px; border: 1px solid #ffffff07; border-radius: 50%; }
+#catta-lorebook .clb-hero > div { position: relative; z-index: 2; padding: 20px 18px; max-width: calc(100% - 136px); }
+#catta-lorebook .clb-hero small { color: #a9acb7; font-size: 8px; letter-spacing: 1.7px; font-weight: 600; white-space: nowrap; }
+#catta-lorebook .clb-hero h2 { margin: 10px 0 8px; color: #fafafd; font-size: 24px; font-weight: 650; line-height: 1.5; letter-spacing: -.5px; }
+#catta-lorebook .clb-hero h2 span { color: #c6c8d1; }
+#catta-lorebook .clb-hero p { margin: 0; color: #b2b4be; font-size: 10px; line-height: 1.7; }
+#catta-lorebook .clb-hero > img { position: absolute; z-index: 1; width: 151px; height: auto; max-height: 176px; object-fit: contain; right: 8px; bottom: 0; pointer-events: none; filter: drop-shadow(0 8px 12px #0008); }
+
+#catta-lorebook .clb-account { margin: 12px 0 15px; padding: 13px; border: 1px solid #30323a; border-radius: 12px; background: linear-gradient(115deg, #1b1c21, #15161a); }
+#catta-lorebook .clb-account-line { display: flex; gap: 11px; align-items: center; min-width: 0; }
+#catta-lorebook .clb-account-line > img { width: 46px; height: 48px; object-fit: contain; background: #24252c; border: 1px solid #42444e; border-radius: 12px; padding: 3px; }
+#catta-lorebook .clb-account-line > div { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+#catta-lorebook .clb-account-line small { color: #b1b3bd; font-size: 10px; }
+#catta-lorebook [data-clb=account] { margin: 1px 0; color: #efeff3; font-size: 13px; font-weight: 600; }
+#catta-lorebook [data-clb=quota] { color: #b1b3bd; font-size: 10px; }
+#catta-lorebook [data-clb=login-box] { margin-top: 10px; padding-top: 9px; border-top: 1px solid #2b2d34; color: #afb2bd; font-size: 10px; }
+#catta-lorebook [data-clb=login-box] > summary:hover { color: #f0f0f4; }
+
+#catta-lorebook .clb-tabs { display: flex; gap: 4px; margin: 0 0 15px; padding: 5px; border: 1px solid #30323a; border-radius: 11px; background: #121317; }
+#catta-lorebook .clb-tabs button { flex: 1; min-height: 42px; padding: 7px 3px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: #b5b7c1; font-size: 12px; font-weight: 500; white-space: nowrap; }
+#catta-lorebook .clb-tabs button[aria-selected=true] { border-color: #4a4d58; background: linear-gradient(#363841, #282a31); color: #fafafd; font-weight: 650; box-shadow: 0 1px 0 #ffffff0a inset, 0 3px 7px #0003; }
+#catta-lorebook .clb-tabs button:hover:not([aria-selected=true]) { color: #ededf2; background: #202127; }
+
+#catta-lorebook .clb-section { padding: 13px; min-width: 0; border: 1px solid #2f3139; border-radius: 12px; background: linear-gradient(135deg, #18191e, #141519); box-shadow: 0 1px 0 #ffffff03 inset; }
+#catta-lorebook h3 { margin: 0 0 13px; color: #e4e5eb; font-size: 13px; font-weight: 600; letter-spacing: .15px; }
+#catta-lorebook .clb-library { margin-top: 18px; }
+#catta-lorebook .clb-list { display: flex; flex-direction: column; gap: 10px; }
+#catta-lorebook .clb-card { display: flex; flex-direction: column; gap: 6px; position: relative; min-width: 0; padding: 14px; border: 1px solid #3a3c45; border-radius: 10px; background: linear-gradient(145deg, #24262c, #1b1d22); box-shadow: 0 1px 0 #ffffff04 inset, 0 4px 10px #0002; overflow-wrap: anywhere; }
+#catta-lorebook .clb-card-title { display: block; padding-right: 30px; color: #f2f2f6; font-size: 15px; font-weight: 600; line-height: 1.6; }
+#catta-lorebook .clb-card-meta { color: #b5b7c1; font-size: 10px; }
+#catta-lorebook .clb-card-id { color: #999da9; font-size: 9px; overflow-wrap: anywhere; }
+#catta-lorebook .clb-badge { display: inline-block; align-self: flex-start; margin-top: 4px; padding: 3px 8px; color: #caced8; border: 1px solid #4a4d58; border-radius: 5px; background: #ffffff04; font-size: 9px; }
+#catta-lorebook .clb-select { align-self: flex-end; margin-top: 2px; padding: 7px 13px; border: 1px solid #555964; border-radius: 7px; background: #373a43; color: #f1f2f5; font-size: 10px; font-weight: 600; }
+#catta-lorebook .clb-select:hover:not(:disabled) { background: #444751; border-color: #7b7f8c; }
+#catta-lorebook .clb-empty { margin: 0; padding: 27px 12px; color: #afb2bd; text-align: center; font-size: 11px; line-height: 1.9; border: 1px dashed #42454f; border-radius: 9px; background: #111216; }
+#catta-lorebook .clb-active { padding: 14px 0 0; }
+#catta-lorebook .clb-enable { display: flex; align-items: center; justify-content: space-between; position: relative; gap: 8px; color: #d7d9e2; cursor: pointer; font-size: 11px; font-weight: 550; }
+#catta-lorebook .clb-enable input { position: absolute; right: 10px; opacity: 0; width: 1px; height: 1px; }
+#catta-lorebook .clb-track { display: block; flex: none; width: 40px; height: 24px; padding: 3px; border: 1px solid #535661; border-radius: 30px; background: #2c2e35; }
+#catta-lorebook .clb-track::before { content: ""; display: block; width: 16px; height: 16px; border-radius: 50%; background: #b5b8c3; box-shadow: 0 2px 3px #0006; }
+#catta-lorebook .clb-enable input:checked + .clb-track { background: #c5c8d2; border-color: #ebeef5; }
+#catta-lorebook .clb-enable input:checked + .clb-track::before { background: #fff; transform: translateX(16px); }
+#catta-lorebook .clb-enable input:focus-visible + .clb-track { outline: 2px solid #d5d7e1; outline-offset: 3px; }
+
+#catta-lorebook .clb-primary { display: block; width: 100%; min-height: 43px; padding: 10px 13px; border: 1px solid #626671; border-radius: 9px; background: linear-gradient(#41444e, #2c2f37); color: #fafaff; font-size: 12px; font-weight: 600; box-shadow: 0 1px 0 #ffffff0d inset, 0 4px 10px #0003; }
+#catta-lorebook .clb-primary:hover:not(:disabled) { background: linear-gradient(#4a4e59, #373b44); border-color: #979ba7; }
+#catta-lorebook .clb-start { min-height: 49px; margin-top: 14px; border-color: #f1f2f6; background: linear-gradient(120deg, #f0f1f4, #c8cbd4); color: #18191e; font-size: 14px; font-weight: 700; box-shadow: 0 1px 0 #fff8 inset, 0 7px 18px #0005; }
+#catta-lorebook .clb-start:hover:not(:disabled) { border-color: #fff; background: linear-gradient(120deg, #fff, #dbdde5); }
+#catta-lorebook .clb-start:disabled { border-color: #464953; background: #292c33; color: #b6b9c4; box-shadow: none; opacity: .75; }
+#catta-lorebook .clb-start > span { margin-left: 9px; color: #727783; }
+#catta-lorebook .clb-caption { margin: 11px 4px 0; color: #b0b3bf; text-align: center; font-size: 10px; line-height: 1.8; }
+#catta-lorebook .clb-note { margin: 8px 0; color: var(--clb-muted); font-size: 10px; line-height: 1.8; }
+#catta-lorebook .clb-secondary { min-height: 41px; padding: 9px 12px; border: 1px solid #474b56; border-radius: 8px; background: #22252c; color: #d6d9e2; font-size: 11px; }
+#catta-lorebook .clb-secondary:hover:not(:disabled) { background: #30343d; border-color: #707580; }
+#catta-lorebook [data-clb=more] { margin-top: 12px; width: 100%; }
+
+#catta-lorebook .clb-book-menu { position: absolute; top: 10px; right: 10px; z-index: 3; }
+#catta-lorebook .clb-book-menu > summary { padding: 2px 7px; border: 1px solid #515560; border-radius: 6px; background: #2a2d35; color: #d5d8e1; line-height: 1.5; }
+#catta-lorebook .clb-book-actions { position: absolute; top: 33px; right: 0; width: 195px; max-width: 70vw; padding: 5px; border: 1px solid #555965; border-radius: 9px; background: #22252c; box-shadow: 0 16px 30px #0009, 0 1px 0 #ffffff08 inset; }
+#catta-lorebook .clb-book-actions button { display: block; width: 100%; min-height: 39px; padding: 9px; border: 0; border-radius: 6px; background: transparent; color: #e0e2e9; text-align: left; font-size: 11px; }
+#catta-lorebook .clb-book-actions button:hover { background: #373b45; }
+
+#catta-lorebook .clb-search-wrap { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; padding: 0 12px; border: 1px solid #4b4f5a; border-radius: 9px; background: #15171c; color: #b7bbc6; }
+#catta-lorebook .clb-search-wrap input { flex: 1; min-width: 0; width: 100%; margin: 0; padding: 12px 0; border: 0; background: transparent; color: #e8eaf0; box-shadow: none; }
+#catta-lorebook .clb-field { display: block; margin: 13px 0; color: #d3d6df; font-size: 11px; font-weight: 550; }
+#catta-lorebook .clb-field :is(input, select) { display: block; width: 100%; height: 42px; margin: 6px 0 0; padding: 9px 11px; border: 1px solid #50545f; border-radius: 8px; background: #111318; color: #edeff6; box-shadow: 0 1px 3px #0003 inset; }
+#catta-lorebook .clb-field input[readonly] { border-color: #3b3e48; background: #1b1e25; color: #b9bdc8; }
+#catta-lorebook .clb-field select { appearance: auto; font: inherit; }
+#catta-lorebook .clb-field small { display: block; margin-top: 7px; color: #afb3c0; font-size: 10px; font-weight: 400; }
+#catta-lorebook input::placeholder { color: #a0a5b2; opacity: 1; }
+#catta-lorebook :is(input[type=radio], input[type=checkbox]) { accent-color: #d1d5df; }
+#catta-lorebook [data-clb=unlock-pin] { height: 49px; text-align: center; letter-spacing: 6px; font-size: 22px; }
+#catta-lorebook [data-clb=unlock-pin]::placeholder { letter-spacing: 0; font-size: 12px; }
+
+#catta-lorebook .clb-upload-intro { display: flex; align-items: center; gap: 12px; padding: 13px 11px; border: 1px solid #434650; border-radius: 10px; background: linear-gradient(110deg, #282a30, #1d1f25); }
+#catta-lorebook .clb-upload-intro img { width: 48px; height: 52px; flex: none; object-fit: contain; filter: drop-shadow(0 3px 4px #0005); }
+#catta-lorebook .clb-upload-intro strong { color: #eceef5; font-size: 12px; font-weight: 600; }
+#catta-lorebook .clb-upload-intro small { display: block; margin-top: 3px; color: #b7bbc7; font-size: 9px; }
+#catta-lorebook .clb-share { min-width: 0; margin: 18px 0 14px; padding: 0; border: 0; }
+#catta-lorebook .clb-share legend { margin-bottom: 5px; color: #dfe2eb; font-size: 12px; font-weight: 600; }
+#catta-lorebook .clb-share-choice { display: flex; align-items: center; gap: 11px; min-height: 65px; margin: 8px 0; padding: 12px; border: 1px solid #3f434e; border-radius: 10px; background: #1b1e25; cursor: pointer; }
+#catta-lorebook .clb-share-choice:has(input:checked) { border-color: #939aa8; background: linear-gradient(110deg, #343943, #252931); box-shadow: 3px 0 0 #c6cbd7 inset, 0 1px 0 #ffffff06 inset; }
+#catta-lorebook .clb-share-choice:focus-within { outline: 2px solid #c6ccd9; outline-offset: 2px; }
+#catta-lorebook .clb-share-choice input { flex: none; width: 17px; height: 17px; margin: 0; }
+#catta-lorebook .clb-share-choice strong { display: block; color: #eceff7; font-size: 11px; font-weight: 600; }
+#catta-lorebook .clb-share-choice small { display: block; margin-top: 3px; color: #b9becb; font-size: 9px; line-height: 1.7; }
+#catta-lorebook .clb-share-detail { margin: 0 1px 10px 10px; padding: 12px; border: 1px solid #565c69; border-left: 2px solid #a5adbe; border-radius: 0 8px 8px; background: #20242d; }
+#catta-lorebook .clb-role-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+#catta-lorebook .clb-role-options label { display: flex; align-items: center; justify-content: center; gap: 5px; padding: 9px 3px; border: 1px solid #565d6b; border-radius: 7px; background: #1a1e26; color: #d7dce8; font-size: 10px; cursor: pointer; }
+#catta-lorebook .clb-role-options input { width: 15px; height: 15px; margin: 0; }
+#catta-lorebook .clb-role-options label:has(input:checked) { border-color: #a5afc0; background: #3a424f; color: #fff; }
+#catta-lorebook .clb-share-summary { margin: 12px 0; padding: 11px; border: 1px solid #4b5260; border-radius: 8px; background: #242a34; color: #c9d0de; font-size: 10px; line-height: 1.8; }
+#catta-lorebook .clb-drop-zone { display: flex; flex-direction: column; align-items: center; gap: 9px; margin: 15px 0; padding: 19px 11px; border: 1px dashed #69717f; border-radius: 10px; background: #171c24; color: #d3d9e6; text-align: center; font-size: 11px; cursor: pointer; overflow-wrap: anywhere; }
+#catta-lorebook .clb-drop-zone input { min-width: 0; width: 100%; margin: 0; padding: 5px; border: 0; background: transparent; color: #bec6d6; font-size: 10px; }
+#catta-lorebook .clb-drop-zone input::file-selector-button { margin-right: 9px; padding: 6px 10px; border: 1px solid #677182; border-radius: 6px; background: #343d4b; color: #f1f5fd; font: inherit; cursor: pointer; }
+#catta-lorebook .clb-drop-zone small { max-width: 100%; color: #b5bfd1; font-size: 10px; }
+
+#catta-lorebook .clb-status { margin: 12px 0; padding: 11px; border: 1px solid #565d6a; border-radius: 8px; background: #282e38; color: #d4dbe8; font-size: 11px; line-height: 1.8; overflow-wrap: anywhere; }
+#catta-lorebook .clb-status:empty { display: none; }
+#catta-lorebook .clb-footer { margin: 20px 0 3px; padding-top: 14px; border-top: 1px solid #282b33; color: #b0b5c2; text-align: center; font-size: 9px; font-weight: 550; letter-spacing: 1.8px; }
+#catta-lorebook .clb-footer > span { color: #d1d7e4; }
+#catta-lorebook .clb-footer small { display: block; margin-top: 5px; color: #a1a9b9; font-size: 9px; font-weight: 400; letter-spacing: 0; }
+
+#catta-lorebook .clb-dialog { position: fixed; inset: 0; width: min(410px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); margin: auto; padding: 19px; overflow: auto; border: 1px solid #5b6270; border-radius: 15px; background: #171b22; color: #e6eaf2; color-scheme: dark; box-shadow: 0 30px 100px #000b, 0 1px 0 #ffffff08 inset; font: 13px/1.7 "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif; }
+#catta-lorebook .clb-dialog::backdrop { background: #000b; backdrop-filter: blur(5px); }
+#catta-lorebook .clb-dialog-header { display: flex; align-items: center; gap: 10px; margin: -19px -19px 17px; padding: 17px 19px; border-bottom: 1px solid #424956; background: linear-gradient(115deg, #303641, #202630); }
+#catta-lorebook .clb-dialog-header > span { color: #c4ccda; }
+#catta-lorebook .clb-dialog-header h3 { flex: 1; margin: 0; color: #f1f4fa; font-size: 14px; }
+#catta-lorebook .clb-close { width: 30px; height: 30px; border: 1px solid #697385; border-radius: 50%; background: #353e4c; color: #eef3fc; font-size: 22px; line-height: 1; }
+#catta-lorebook .clb-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+#catta-lorebook .clb-dialog-actions { display: flex; gap: 8px; margin-top: 18px; }
+#catta-lorebook .clb-dialog-actions > button { flex: 1; }
+
+/* Keep every private control behind the existing membership gate. */
+#catta-lorebook:not([data-clb-can-upload=true]) :is([data-tab=upload], [data-pane=upload]) { display: none !important; }
+#catta-lorebook:not([data-clb-member-gate=authorized]) :is(.clb-tabs, .clb-search-wrap, [data-pane], [data-clb=more], .clb-footer, .clb-dialog) { display: none !important; }
+#catta-lorebook .clb-member-gate { margin: 11px 0 0; padding: 12px; border: 1px solid #555d6c; border-radius: 9px; background: #242b36; color: #d1d9e8; }
+
+@container (max-width: 400px) {
+    #catta-lorebook .clb-body { padding: 11px 9px 10px; }
+    #catta-lorebook .clb-header { min-height: 58px; padding: 11px 13px; }
+    #catta-lorebook .clb-hero { height: 166px; }
+    #catta-lorebook .clb-hero > div { max-width: calc(100% - 112px); padding: 18px 13px; }
+    #catta-lorebook .clb-hero h2 { font-size: 21px; margin: 9px 0 7px; }
+    #catta-lorebook .clb-hero small { font-size: 7px; letter-spacing: 1.05px; }
+    #catta-lorebook .clb-hero > img { width: 121px; right: 4px; bottom: 1px; }
+    #catta-lorebook .clb-hero p { font-size: 9px; }
+    #catta-lorebook .clb-tabs button { font-size: 11px; }
+    #catta-lorebook .clb-account { padding: 11px; }
+}
+@container (max-width: 350px) {
+    #catta-lorebook .clb-brand > span { font-size: 15px; }
+    #catta-lorebook .clb-hero { height: 159px; }
+    #catta-lorebook .clb-hero > div { max-width: calc(100% - 97px); padding: 17px 10px; }
+    #catta-lorebook .clb-hero h2 { font-size: 18px; letter-spacing: -.4px; }
+    #catta-lorebook .clb-hero small { font-size: 6.5px; letter-spacing: .8px; }
+    #catta-lorebook .clb-hero > img { width: 104px; right: 1px; bottom: 5px; }
+    #catta-lorebook .clb-section { padding: 10px; }
+    #catta-lorebook .clb-card { padding: 12px; }
+    #catta-lorebook .clb-role-options { gap: 4px; }
+    #catta-lorebook .clb-share-choice { padding: 10px; gap: 9px; }
+}
+@media (max-width: 340px) { #catta-lorebook .clb-options { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { #catta-lorebook button, #catta-lorebook .clb-track::before { transition: background .16s, border-color .16s, transform .16s; } }

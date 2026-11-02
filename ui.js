@@ -19,7 +19,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
           <nav class="clb-tabs" role="tablist" aria-label="เมนู Catta Lorebook">
             <button type="button" role="tab" id="clb-tab-mine" data-tab="mine" aria-controls="clb-pane-mine" aria-selected="true">▤ ของฉัน</button>
             <button type="button" role="tab" id="clb-tab-search" data-tab="search" aria-controls="clb-pane-search" aria-selected="false" tabindex="-1">⌕ ค้นหา</button>
-            <button type="button" role="tab" id="clb-tab-upload" data-tab="upload" aria-controls="clb-pane-upload" aria-selected="false" tabindex="-1">↥ อัปโหลด</button>
+            <button type="button" role="tab" id="clb-tab-upload" data-tab="upload" aria-controls="clb-pane-upload" aria-selected="false" tabindex="-1" hidden>↥ อัปโหลด</button>
           </nav>
           <div data-clb="search-wrap" class="clb-search-wrap" hidden><span>⌕</span><input data-clb="search" type="search" aria-label="ค้นหา Lorebook" placeholder="ชื่อ Lorebook / ผู้สร้าง / รหัส…" autocomplete="off"></div>
           <div data-pane="mine" id="clb-pane-mine" role="tabpanel" aria-labelledby="clb-tab-mine">
@@ -42,7 +42,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
                 <label class="clb-share-choice"><input type="radio" name="clb-sharing" value="roles"><span><strong>เลือกยศที่เข้าใช้ได้</strong><small>เลือก Basic / VIP / VVIP ได้มากกว่าหนึ่งยศ</small></span></label>
                 <div data-clb="role-detail" class="clb-share-detail" hidden><div class="clb-role-options">${['Basic', 'VIP', 'VVIP'].map(role => `<label><input type="checkbox" data-role="${role}">${role}</label>`).join('')}</div><p class="clb-note">ตรวจตรงตามยศที่เลือก เช่น เลือก Basic จะไม่รวม VIP อัตโนมัติ</p></div>
                 <label class="clb-share-choice"><input type="radio" name="clb-sharing" value="pin"><span><strong>ล็อกใส่รหัส 6 ตัว</strong><small>สมาชิกต้องใส่รหัสก่อนเลือกใช้ โดยไม่จำกัดยศ</small></span></label>
-                <div data-clb="pin-detail" class="clb-share-detail" hidden><label class="clb-field">รหัสตัวเลข 6 หลัก<input data-clb="pin" type="password" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" autocomplete="new-password" placeholder="000000" disabled></label></div>
+                <div data-clb="pin-detail" class="clb-share-detail" hidden><label class="clb-field">รหัสตัวเลข 6 หลัก<input data-clb="pin" type="password" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" autocomplete="new-password" placeholder="กรอกรหัส 6 หลัก" disabled></label></div>
               </fieldset>
               <p data-clb="share-summary" class="clb-share-summary" role="status"></p>
               <label class="clb-drop-zone">↥ เลือกไฟล์ Lorebook JSON<input data-clb="file" type="file" accept=".json,application/json" required><small data-clb="file-name">ยังไม่ได้เลือกไฟล์</small></label>
@@ -61,6 +61,22 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
             <div class="clb-dialog-actions"><button type="button" data-clb="cancel-setup" class="clb-secondary">ยกเลิก</button><button type="submit" class="clb-primary">บันทึกและเริ่มใช้งาน</button></div>
             <p data-clb="setup-status" class="clb-status" role="status"></p>
           </form></dialog>
+          <dialog data-clb="unlock-dialog" class="clb-dialog" aria-labelledby="clb-unlock-title"><form data-clb="unlock-form">
+            <div class="clb-dialog-header"><span>♧</span><h3 id="clb-unlock-title">ปลดล็อก Lorebook</h3><button type="button" data-clb="close-unlock" class="clb-close" aria-label="ปิดหน้าปลดล็อก">×</button></div>
+            <p data-clb="unlock-book" class="clb-note"></p>
+            <label class="clb-field">รหัสตัวเลข 6 หลัก<input data-clb="unlock-pin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autocomplete="off" placeholder="กรอกรหัสจากผู้สร้าง"></label>
+            <p data-clb="unlock-status" class="clb-status" role="status"></p>
+            <div class="clb-dialog-actions"><button type="button" data-clb="cancel-unlock" class="clb-secondary">ยกเลิก</button><button type="submit" data-clb="unlock-submit" class="clb-primary">ปลดล็อกและเลือกใช้</button></div>
+          </form></dialog>
+          <dialog data-clb="policy-dialog" class="clb-dialog" aria-labelledby="clb-policy-title"><form data-clb="policy-form">
+            <div class="clb-dialog-header"><span>⚙</span><h3 id="clb-policy-title">สิทธิ์การแชร์ Lorebook</h3><button type="button" data-clb="close-policy" class="clb-close" aria-label="ปิดการตั้งค่าสิทธิ์">×</button></div>
+            <p data-clb="policy-book" class="clb-note"></p>
+            <label class="clb-field">ให้ใครเข้าใช้ได้<select data-clb="policy-mode"><option value="private">ส่วนตัวของฉัน</option><option value="all">แชร์ให้ทุกยศ</option><option value="roles">เลือกยศที่เข้าใช้ได้</option><option value="pin">ล็อกรหัส 6 หลัก</option></select></label>
+            <div data-clb="policy-roles" class="clb-role-options">${['Basic','VIP','VVIP'].map(role => `<label><input type="checkbox" data-policy-role="${role}">${role}</label>`).join('')}</div>
+            <label data-clb="policy-pin-wrap" class="clb-field">กำหนดรหัสใหม่ 6 หลัก<input data-clb="policy-pin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="new-password"><small>การบันทึกโหมดล็อกรหัสจะเปลี่ยนรหัสและยกเลิกการปลดล็อกเดิม</small></label>
+            <p data-clb="policy-status" class="clb-status" role="status"></p>
+            <div class="clb-dialog-actions"><button type="button" data-clb="cancel-policy" class="clb-secondary">ยกเลิก</button><button type="submit" data-clb="policy-submit" class="clb-primary">บันทึกสิทธิ์</button></div>
+          </form></dialog>
         </div>
       </details>`;
     target.appendChild(root);
@@ -72,46 +88,109 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         return !ctx.groupId && avatar && ctx.chatId != null ? JSON.stringify([avatar, ctx.chatId]) : null;
     };
     const error = code => new LorebookError(code);
-    let account = null, quota = null, pane = 'mine', items = [], offset = 0, hasMore = false;
+    let account = null, quota = null, capabilities = null, pane = 'mine', items = [], offset = 0, hasMore = false;
     let searchEpoch = 0, selectionEpoch = 0, accountEpoch = 0, searchTimer, uploadBusy = false, loading = false;
     let setupKey = null;
+    let pendingUnlock = null, pendingPolicy = null, uploadRequestKey = null;
     const bindings = new Map();
     const connections = new Map();
+    const grants = new Map();
     let currentKey = key();
     const selected = () => bindings.get(key());
     const setStatus = text => { el('status').textContent = text; };
     const mode = () => root.querySelector('[name="clb-sharing"]:checked').value;
-    const restricted = () => ['roles', 'pin'].includes(mode());
+    const canUpload = () => quota?.can_upload === true;
+    function syncUploadPermission() {
+        const allowed = canUpload();
+        root.dataset.clbCanUpload = String(allowed);
+        tabs.find(tab => tab.dataset.tab === 'upload').hidden = !allowed;
+        if (!allowed && pane === 'upload') switchTab('mine');
+    }
+    const sharingReady = () => capabilities?.sharing_version === 1 && ['private','all','roles','pin'].every(value => capabilities.access_modes?.includes(value));
+    const readPolicy = () => {
+        if (!canUpload()) throw error('UPLOAD_ROLE_REQUIRED');
+        const value = mode();
+        if (!sharingReady()) throw error('SHARING_UNAVAILABLE');
+        if (value === 'roles') {
+            const roles = [...root.querySelectorAll('[data-role]:checked')].map(input => input.dataset.role);
+            if (!roles.length) throw error('POLICY_INVALID');
+            return { access_mode: value, allowed_roles: roles };
+        }
+        if (value === 'pin') {
+            if (!/^[0-9]{6}$/.test(el('pin').value)) throw error('PIN_INVALID');
+            return { access_mode: value, pin: el('pin').value };
+        }
+        return { access_mode: value };
+    };
 
     function sharingChanged() {
         const value = mode();
         el('role-detail').hidden = value !== 'roles';
         el('pin-detail').hidden = value !== 'pin';
-        el('pin').disabled = value !== 'pin';
+        el('pin').disabled = uploadBusy || !canUpload() || value !== 'pin';
         el('pin').required = value === 'pin';
         if (value !== 'pin') el('pin').value = '';
-        el('share-summary').textContent = restricted()
-            ? 'ยังเผยแพร่แบบเลือกยศหรือล็อกรหัสไม่ได้ ระบบยังไม่เปิดรองรับสิทธิ์นี้ หนังสือของคุณจะไม่ถูกอัปโหลดหรือเปลี่ยนเป็นแชร์ทุกคน'
+        const roles = [...root.querySelectorAll('[data-role]:checked')].map(input => input.dataset.role);
+        el('share-summary').textContent = !sharingReady() ? 'กำลังตรวจความพร้อมของระบบแชร์ กรุณารอสักครู่หรือลองเชื่อมบัญชีใหม่'
+            : value === 'roles' ? roles.length ? `เปิดให้ยศ ${roles.join(' / ')} เท่านั้น` : 'เลือกอย่างน้อยหนึ่งยศเพื่อเผยแพร่'
+            : value === 'pin' ? 'สมาชิก Catta ต้องกรอกรหัสก่อนเลือกใช้ ไม่จำกัดยศแพ็กเกจ'
             : value === 'all' ? 'สมาชิก Catta ที่เข้าสู่ระบบค้นหาและเลือกใช้ได้' : 'หนังสือนี้เป็นส่วนตัว เฉพาะคุณเท่านั้น';
-        el('import').textContent = restricted() ? 'สิทธิ์นี้ยังไม่เปิดใช้งาน' : value === 'all' ? 'เผยแพร่ให้สมาชิก Catta' : 'อัปโหลดแบบส่วนตัว';
-        el('import').disabled = uploadBusy || restricted() || !account || quota?.remaining <= 0;
+        el('import').textContent = value === 'private' ? 'อัปโหลดแบบส่วนตัว' : value === 'pin' ? 'เผยแพร่แบบล็อกรหัส' : 'เผยแพร่ให้สมาชิก Catta';
+        el('import').disabled = uploadBusy || !canUpload() || !sharingReady() || !account || quota?.remaining <= 0 || (value === 'roles' && !roles.length);
+        root.querySelectorAll('[name="clb-sharing"], [data-role], [data-clb="title"], [data-clb="file"]').forEach(input => { input.disabled = uploadBusy || !canUpload(); });
     }
-    function renderAccount(data) {
-        account = data.user; quota = data.quota;
-        el('account').textContent = `${account.name} · ${quota.tier}`;
-        el('quota').textContent = `${quota.used} / ${quota.limit} สล็อต · เหลือ ${quota.remaining}`;
+    function renderAccount(data, { preserveLogin = false } = {}) {
+        account = data.user; quota = data.quota; capabilities = data.capabilities;
+        el('account').textContent = `${account.name} · ${quota.tier}${quota.is_chef ? ' · เชฟ' : ''}`;
+        el('quota').textContent = canUpload() ? `${quota.used} / ${quota.limit} สล็อต · เหลือ ${quota.remaining}` : 'เลือกใช้ Lorebook ได้ตามสิทธิ์ที่ผู้สร้างกำหนด';
         el('author').value = account.name;
-        el('login-box').open = false;
+        if (!preserveLogin) el('login-box').open = false;
+        syncUploadPermission();
         sharingChanged();
+    }
+    function policyChanged() {
+        const value = el('policy-mode').value;
+        el('policy-roles').hidden = value !== 'roles';
+        el('policy-pin-wrap').hidden = value !== 'pin';
+        el('policy-pin').disabled = value !== 'pin';
+        el('policy-pin').required = value === 'pin';
+        if (value !== 'pin') el('policy-pin').value = '';
+    }
+    function openPolicy(item) {
+        if (!sharingReady()) { showError(error('SHARING_UNAVAILABLE')); return; }
+        pendingPolicy = { item, accountEpoch };
+        el('policy-book').textContent = item.title;
+        el('policy-mode').value = item.access_mode || (item.visibility === 'members' ? 'all' : 'private');
+        root.querySelectorAll('[data-policy-role]').forEach(input => { input.checked = (item.allowed_roles || []).includes(input.dataset.policyRole); });
+        el('policy-pin').value = ''; el('policy-status').textContent = ''; el('policy-submit').disabled = false;
+        policyChanged(); el('policy-dialog').showModal();
     }
     function empty(target, text) {
         const p = document.createElement('p'); p.className = 'clb-empty'; p.textContent = text; target.append(p);
     }
-    async function choose(item) {
+    function grantFor(id) {
+        const grant = grants.get(id);
+        if (grant && grant.expiresAt > Date.now()) return grant.token;
+        grants.delete(id); return undefined;
+    }
+    function openUnlock(item) {
+        pendingUnlock = { item, key: key(), accountEpoch };
+        el('unlock-book').textContent = item.title;
+        el('unlock-pin').value = ''; el('unlock-status').textContent = '';
+        el('unlock-submit').disabled = false;
+        if (!el('unlock-dialog').open) el('unlock-dialog').showModal();
+        el('unlock-pin').focus();
+    }
+    function revokeMemory() {
+        selectionEpoch++; bindings.clear(); connections.clear(); grants.clear(); runtime.clearAll();
+    }
+    async function choose(item, unlockedToken) {
         const originalKey = key(), epoch = ++selectionEpoch, identityEpoch = accountEpoch;
         if (!originalKey) return showError(error('SELECT_CHARACTER'));
+        const token = unlockedToken || grantFor(item.id);
+        if (item.access_mode === 'pin' && String(item.owner_id) !== String(account?.uid) && !token) { openUnlock(item); return; }
         try {
-            const data = await cloud.content(item.id);
+            const data = await cloud.content(item.id, token);
             if (epoch !== selectionEpoch || identityEpoch !== accountEpoch) return;
             if (originalKey !== key()) throw error('CONTEXT_CHANGED');
             runtime.importBook(data.book);
@@ -120,7 +199,11 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
             runtime.setEnabled(false);
             switchTab('mine');
             update(runtime.snapshot());
-        } catch (err) { showError(err); }
+        } catch (err) {
+            if (identityEpoch !== accountEpoch || epoch !== selectionEpoch || originalKey !== key()) return;
+            if (err.code === 'PIN_REQUIRED') { grants.delete(item.id); openUnlock(item); }
+            else showError(err);
+        }
     }
     function card(item, target, active = false) {
         const article = document.createElement('article'); article.className = 'clb-card';
@@ -129,11 +212,11 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         meta.textContent = `${item.creator_name} · ${new Date(item.created_at).toLocaleDateString('th-TH')}`;
         const id = document.createElement('small'); id.className = 'clb-card-id'; id.textContent = `ID: ${item.id}`;
         const badge = document.createElement('span'); badge.className = 'clb-badge';
-        badge.textContent = item.visibility === 'members' ? '☁ แชร์ให้สมาชิก' : '♧ ส่วนตัว';
+        badge.textContent = item.access_mode === 'pin' ? '♧ ล็อกรหัส 6 หลัก' : item.access_mode === 'roles' ? `✦ ${(item.allowed_roles || []).join(' / ')}` : item.visibility === 'members' ? '☁ แชร์ให้สมาชิก' : '♧ ส่วนตัว';
         article.append(title, meta, id, badge);
         if (!active) {
             const button = document.createElement('button'); button.type = 'button'; button.className = 'clb-select';
-            button.textContent = selected()?.id === item.id ? 'เลือกอยู่' : 'เลือกใช้';
+            button.textContent = selected()?.id === item.id ? 'เลือกอยู่' : item.access_mode === 'pin' && String(item.owner_id) !== String(account?.uid) ? 'ใส่รหัสเพื่อเลือกใช้' : 'เลือกใช้';
             button.disabled = selected()?.id === item.id;
             button.addEventListener('click', () => { button.disabled = true; void choose(item).finally(() => { button.disabled = selected()?.id === item.id; }); });
             article.append(button);
@@ -144,12 +227,13 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
             const actions = document.createElement('div'); actions.className = 'clb-book-actions';
             const options = [];
             if (active) options.push(['unlink', 'เลิกใช้กับแชทนี้']);
-            if (String(item.owner_id) === String(account?.uid)) options.push([item.visibility === 'members' ? 'private' : 'members', item.visibility === 'members' ? 'ตั้งเป็นส่วนตัว' : 'แชร์ให้สมาชิก'], ['archive', 'เก็บเข้าคลัง (คืนสล็อต)'], ['delete', 'ลบ Lorebook ถาวร']);
+            if (String(item.owner_id) === String(account?.uid)) options.push(['policy', 'ตั้งค่าสิทธิ์การแชร์'], ['archive', 'เก็บเข้าคลัง (คืนสล็อต)'], ['delete', 'ลบ Lorebook ถาวร']);
             for (const [action, label] of options) {
                 const button = document.createElement('button'); button.type = 'button'; button.textContent = label;
                 button.addEventListener('click', async () => {
                     const identityEpoch = accountEpoch;
                     menu.open = false;
+                    if (action === 'policy') { openPolicy(item); return; }
                     if (action === 'unlink') { selectionEpoch++; bindings.delete(key()); connections.delete(key()); runtime.clear(); update(runtime.snapshot()); return; }
                     if (action === 'archive' && !confirm('เก็บ Lorebook นี้เข้าคลังเพื่อคืนสล็อต? ข้อมูลยังเก็บไว้ แต่จะเลือกใช้ไม่ได้')) return;
                     if (action === 'delete' && !confirm('ลบ Lorebook ของคุณถาวร? การลบไม่สามารถกู้คืนได้')) return;
@@ -163,6 +247,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
                             runtime.clearAll();
                             bindings.clear();
                             connections.clear();
+                            grants.clear();
                         }
                         const data = await cloud.me();
                         if (identityEpoch !== accountEpoch) return;
@@ -185,7 +270,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         el('more').hidden = !hasMore || pane === 'upload';
     }
     async function refresh(append = false) {
-        if (!cloud.hasCredentials() || pane === 'upload') return;
+        if (!account || !cloud.hasCredentials() || pane === 'upload') return;
         const epoch = ++searchEpoch, activePane = pane;
         loading = true; renderLists(); el('more').disabled = true;
         try {
@@ -198,6 +283,7 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         finally { if (epoch === searchEpoch) { loading = false; renderLists(); el('more').disabled = false; } }
     }
     function switchTab(next, focus = false) {
+        if (next === 'upload' && !canUpload()) next = 'mine';
         pane = next; searchEpoch++; items = []; hasMore = false; loading = false;
         clearTimeout(searchTimer);
         tabs.forEach(tab => { const active = tab.dataset.tab === next; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; if (active && focus) tab.focus(); });
@@ -221,14 +307,17 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         el('start').disabled = !book || !snapshot.enabled;
         el('start-hint').textContent = book && snapshot.enabled ? 'กดเริ่มใช้งานเพื่อตั้งค่าการสแกนและงบโทเคน' : 'เลือก Lorebook แล้วเปิดเชื่อมกับแชทนี้';
         if (el('setup').open && (setupKey !== key() || !book || !snapshot.enabled)) el('setup').close();
+        if (el('unlock-dialog').open && pendingUnlock?.key !== key()) el('unlock-dialog').close();
         const states = { prepared: `เตรียม ${snapshot.selected} Entries`, sent: `ใส่ ${snapshot.sent} Entries · ข้าม ${snapshot.omitted} Entries`, error: 'หยุดส่งเนื่องจากข้อผิดพลาด' };
         setStatus(states[snapshot.state] || ''); renderLists();
     }
     tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => switchTab(tab.dataset.tab));
         tab.addEventListener('keydown', event => {
-            const next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : event.key === 'ArrowLeft' ? (index + tabs.length - 1) % tabs.length : event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : null;
-            if (next !== null) { event.preventDefault(); switchTab(tabs[next].dataset.tab, true); }
+            const available = tabs.filter(item => !item.hidden), position = available.indexOf(tab);
+            if (position < 0) return;
+            const next = event.key === 'ArrowRight' ? (position + 1) % available.length : event.key === 'ArrowLeft' ? (position + available.length - 1) % available.length : event.key === 'Home' ? 0 : event.key === 'End' ? available.length - 1 : null;
+            if (next !== null) { event.preventDefault(); switchTab(available[next].dataset.tab, true); }
         });
     });
     el('search').addEventListener('input', () => { searchEpoch++; clearTimeout(searchTimer); searchTimer = setTimeout(() => void refresh(), 400); });
@@ -238,24 +327,27 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
         try { await cloud.login(el('uid').value, el('token').value); el('token').value = ''; location.reload(); }
         catch (err) { showError(err); el('login').disabled = false; }
     });
-    root.querySelectorAll('[name="clb-sharing"], [data-role]').forEach(input => input.addEventListener('change', sharingChanged));
-    el('file').addEventListener('change', () => { el('file-name').textContent = el('file').files?.[0]?.name || 'ยังไม่ได้เลือกไฟล์'; });
+    root.querySelectorAll('[name="clb-sharing"], [data-role]').forEach(input => input.addEventListener('change', () => { uploadRequestKey = null; sharingChanged(); }));
+    el('upload-form').addEventListener('input', () => { uploadRequestKey = null; });
+    el('file').addEventListener('change', () => { uploadRequestKey = null; el('file-name').textContent = el('file').files?.[0]?.name || 'ยังไม่ได้เลือกไฟล์'; });
     el('upload-form').addEventListener('submit', async event => {
         event.preventDefault();
         if (uploadBusy) return;
-        // Never downgrade a restricted choice to the old members visibility.
-        if (restricted()) { setStatus('ยังไม่เปิดเผยแพร่แบบเลือกยศหรือล็อกรหัส'); return; }
         if (!account) return showError(error('AUTH_REQUIRED'));
+        if (!canUpload()) return showError(error('UPLOAD_ROLE_REQUIRED'));
         const file = el('file').files?.[0], title = el('title').value.trim();
         if (!title) return showError(error('TITLE_INVALID'));
         if (!file) return;
         const identityEpoch = accountEpoch;
-        uploadBusy = true; sharingChanged();
         try {
-            const data = await cloud.upload(file, title, mode() === 'all' ? 'members' : 'private');
+            const policy = readPolicy();
+            uploadRequestKey ||= crypto.randomUUID();
+            uploadBusy = true; sharingChanged();
+            const data = await cloud.upload(file, title, policy, uploadRequestKey);
             if (identityEpoch !== accountEpoch) return;
             el('import-status').textContent = `อัปโหลดแล้ว · ID ${data.item.id}`;
             el('upload-form').reset(); el('pin').value = ''; el('file-name').textContent = 'ยังไม่ได้เลือกไฟล์';
+            uploadRequestKey = null;
             const accountData = await cloud.me();
             if (identityEpoch !== accountEpoch) return;
             renderAccount(accountData); switchTab('mine'); setStatus('อัปโหลดสำเร็จ · เลือกใช้จากคลังของฉันได้');
@@ -281,7 +373,57 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
             el('setup').close(); setStatus('บันทึกแล้ว · พร้อมใช้งานกับแชทนี้');
         } catch (err) { el('setup-status').textContent = 'บันทึกไม่สำเร็จ ตรวจค่าหรือเลือกแชทใหม่'; showError(err); }
     });
-    sharingChanged(); update(runtime.snapshot());
+    for (const name of ['close-unlock','cancel-unlock']) el(name).addEventListener('click', () => el('unlock-dialog').close());
+    el('unlock-dialog').addEventListener('close', () => { pendingUnlock = null; el('unlock-pin').value = ''; });
+    el('unlock-form').addEventListener('submit', async event => {
+        event.preventDefault();
+        const pending = pendingUnlock;
+        if (!pending || el('unlock-submit').disabled) return;
+        if (pending.key !== key() || pending.accountEpoch !== accountEpoch) { el('unlock-dialog').close(); return; }
+        const pin = el('unlock-pin').value;
+        if (!/^[0-9]{6}$/.test(pin)) { el('unlock-status').textContent = 'กรอกรหัสตัวเลข 6 หลัก'; return; }
+        el('unlock-submit').disabled = true; el('unlock-pin').value = '';
+        el('unlock-status').textContent = 'กำลังตรวจรหัส…';
+        try {
+            const result = await cloud.unlock(pending.item.id,pin);
+            if (pending !== pendingUnlock || pending.key !== key() || pending.accountEpoch !== accountEpoch) return;
+            grants.set(pending.item.id,{ token:result.unlock_token, expiresAt:Date.now()+result.expires_in*1000 });
+            el('unlock-dialog').close();
+            await choose(result.metadata,result.unlock_token);
+        } catch (err) {
+            if (pending !== pendingUnlock || pending.accountEpoch !== accountEpoch) return;
+            el('unlock-status').textContent = err.code === 'PIN_INCORRECT' ? 'รหัสไม่ถูกต้อง กรุณาลองใหม่' : err.code === 'PIN_RATE_LIMIT' ? 'ลองรหัสเกินจำนวนที่กำหนด กรุณารอ 15 นาที' : 'ปลดล็อกไม่สำเร็จ ตรวจการเชื่อมต่อหรือขอรหัสล่าสุดจากผู้สร้าง';
+            el('unlock-pin').focus();
+        } finally { if (pending === pendingUnlock) el('unlock-submit').disabled = false; }
+    });
+    el('policy-mode').addEventListener('change',policyChanged);
+    for (const name of ['close-policy','cancel-policy']) el(name).addEventListener('click', () => el('policy-dialog').close());
+    el('policy-dialog').addEventListener('close', () => { pendingPolicy = null; el('policy-pin').value = ''; });
+    el('policy-form').addEventListener('submit', async event => {
+        event.preventDefault();
+        const pending = pendingPolicy;
+        if (!pending || el('policy-submit').disabled || pending.accountEpoch !== accountEpoch) return;
+        const value = el('policy-mode').value, policy = { access_mode:value };
+        if (value === 'roles') {
+            policy.allowed_roles = [...root.querySelectorAll('[data-policy-role]:checked')].map(input => input.dataset.policyRole);
+            if (!policy.allowed_roles.length) { el('policy-status').textContent = 'เลือกอย่างน้อยหนึ่งยศ'; return; }
+        }
+        if (value === 'pin') {
+            if (!/^[0-9]{6}$/.test(el('policy-pin').value)) { el('policy-status').textContent = 'กรอกรหัสใหม่เป็นตัวเลข 6 หลัก'; return; }
+            policy.pin = el('policy-pin').value;
+        }
+        el('policy-submit').disabled = true;
+        try {
+            const result = await cloud.manage(pending.item.id,'policy',policy);
+            if (pending !== pendingPolicy || pending.accountEpoch !== accountEpoch) return;
+            grants.delete(pending.item.id);
+            for (const [bindingKey,book] of bindings) if (book.id === pending.item.id) bindings.set(bindingKey,result.item);
+            el('policy-dialog').close(); await refresh(); update(runtime.snapshot()); setStatus('บันทึกสิทธิ์การแชร์แล้ว');
+        } catch (err) {
+            if (pending === pendingPolicy && pending.accountEpoch === accountEpoch) { el('policy-status').textContent = 'บันทึกสิทธิ์ไม่สำเร็จ กรุณาตรวจการเชื่อมต่อแล้วลองใหม่'; showError(err); }
+        } finally { if (pending === pendingPolicy) el('policy-submit').disabled = false; }
+    });
+    syncUploadPermission(); sharingChanged(); update(runtime.snapshot());
     // Recover the account card after the membership gate has reverified access.
     const gateObserver = new MutationObserver(() => {
         if (root.dataset.clbMemberGate !== 'authorized' || account) return;
@@ -296,17 +438,26 @@ export function createLorebookUI({ target, runtime, context, showError, cloud, L
     if (cloud.hasCredentials()) { const epoch = accountEpoch; void cloud.me().then(data => { if (epoch !== accountEpoch) return; renderAccount(data); return refresh(); }).catch(showError); }
     return {
         update, setError: setStatus,
+        refreshAccount(data) {
+            if (data?.success && String(data.user?.uid) === cloud.credentials().uid) renderAccount(data, { preserveLogin:true });
+        },
         async authorize() {
             const ctx = context(), originalKey = key(), book = selected();
             if (!book || !runtime.snapshot().enabled) return;
-            await cloud.access(book.id);
+            try { await cloud.access(book.id,grantFor(book.id)); }
+            catch (err) {
+                if (['PIN_REQUIRED','ROLE_REQUIRED','NOT_FOUND','AUTH_EXPIRED','ACCESS_DENIED','NOT_A_MEMBER'].includes(err.code)) revokeMemory();
+                throw err;
+            }
             const current = context();
             if (originalKey !== key() || selected()?.id !== book.id || ctx.mainApi !== current.mainApi || ctx.tokenizerModel !== current.tokenizerModel || ctx.chatCompletionSettings?.chat_completion_source !== current.chatCompletionSettings?.chat_completion_source) throw error('CONTEXT_CHANGED');
         },
         clear() {
             accountEpoch++; searchEpoch++; selectionEpoch++; clearTimeout(searchTimer);
-            bindings.clear(); connections.clear(); items = []; account = null; quota = null; hasMore = false; loading = false;
-            if (el('setup').open) el('setup').close();
+            bindings.clear(); connections.clear(); grants.clear(); items = []; account = null; quota = null; capabilities = null; hasMore = false; loading = false;
+            syncUploadPermission();
+            for (const name of ['setup','unlock-dialog','policy-dialog']) if (el(name).open) el(name).close();
+            pendingUnlock = null; pendingPolicy = null; uploadRequestKey = null;
             el('pin').value = ''; el('file').value = ''; el('file-name').textContent = 'ยังไม่ได้เลือกไฟล์'; el('author').value = '';
             el('account').textContent = 'กรุณาเชื่อมบัญชี Catta อีกครั้ง'; el('quota').textContent = '';
             sharingChanged(); update(runtime.snapshot());
